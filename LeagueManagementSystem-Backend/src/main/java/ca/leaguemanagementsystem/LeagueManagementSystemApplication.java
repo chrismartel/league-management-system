@@ -14,7 +14,7 @@ public class LeagueManagementSystemApplication {
 	}
 
 	@RequestMapping("/")
-  	public Strind greeting(){
+  	public String greeting(){
     	  return "Hello world!";
 	}
 }
