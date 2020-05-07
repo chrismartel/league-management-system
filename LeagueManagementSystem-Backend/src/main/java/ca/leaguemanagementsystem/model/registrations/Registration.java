@@ -1,4 +1,4 @@
 package ca.leaguemanagementsystem.model.registrations;
 
-public class LeagueRegistration {
+public class Registration {
 }
