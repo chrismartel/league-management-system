@@ -2,6 +2,7 @@ package ca.leaguemanagementsystem.model.users;
 
 import ca.leaguemanagementsystem.model.leagues.Award;
 import ca.leaguemanagementsystem.model.leagues.Team;
+import ca.leaguemanagementsystem.model.leagues.TeamAssignment;
 
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
@@ -17,6 +18,6 @@ public class Player extends UserRole{
     @OneToMany(mappedBy = "winner")
     private List<Award> awards;
 
-    @OneToMany()
-    private List<Team> teams;
+    @OneToMany(mappedBy = "player")
+    private List<TeamAssignment> assignedTeams;
 }
