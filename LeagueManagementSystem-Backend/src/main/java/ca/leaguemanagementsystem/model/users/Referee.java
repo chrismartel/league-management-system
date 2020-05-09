@@ -15,4 +15,19 @@ public class Referee extends UserRole{
     @OneToMany(mappedBy = "referee")
     private List<RefereeAssignment> refereeAssignments;
 
+    public int getNbYearsExperience() {
+        return nbYearsExperience;
+    }
+
+    public void setNbYearsExperience(int nbYearsExperience) {
+        this.nbYearsExperience = nbYearsExperience;
+    }
+
+    public List<RefereeAssignment> getRefereeAssignments() {
+        return refereeAssignments;
+    }
+
+    public void setRefereeAssignments(List<RefereeAssignment> refereeAssignments) {
+        this.refereeAssignments = refereeAssignments;
+    }
 }

@@ -20,4 +20,36 @@ public class Player extends UserRole{
 
     @OneToMany(mappedBy = "player")
     private List<TeamAssignment> assignedTeams;
+
+    public Integer getRating() {
+        return rating;
+    }
+
+    public void setRating(Integer rating) {
+        this.rating = rating;
+    }
+
+    public String getHeight() {
+        return height;
+    }
+
+    public void setHeight(String height) {
+        this.height = height;
+    }
+
+    public List<Award> getAwards() {
+        return awards;
+    }
+
+    public void setAwards(List<Award> awards) {
+        this.awards = awards;
+    }
+
+    public List<TeamAssignment> getAssignedTeams() {
+        return assignedTeams;
+    }
+
+    public void setAssignedTeams(List<TeamAssignment> assignedTeams) {
+        this.assignedTeams = assignedTeams;
+    }
 }

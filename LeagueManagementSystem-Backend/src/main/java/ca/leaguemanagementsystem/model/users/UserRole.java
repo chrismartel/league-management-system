@@ -9,4 +9,11 @@ public class UserRole {
     @GeneratedValue
     private long userRoleId;
 
+    public long getUserRoleId() {
+        return userRoleId;
+    }
+
+    public void setUserRoleId(long userRoleId) {
+        this.userRoleId = userRoleId;
+    }
 }

@@ -12,4 +12,12 @@ import java.util.List;
 public class Manager extends UserRole{
     @OneToMany(mappedBy = "manager")
     private List<LeagueType> managedLeagues;
+
+    public List<LeagueType> getManagedLeagues() {
+        return managedLeagues;
+    }
+
+    public void setManagedLeagues(List<LeagueType> managedLeagues) {
+        this.managedLeagues = managedLeagues;
+    }
 }
