@@ -4,12 +4,14 @@ import ca.leaguemanagementsystem.model.leagues.Award;
 import ca.leaguemanagementsystem.model.leagues.Team;
 import ca.leaguemanagementsystem.model.leagues.TeamAssignment;
 
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import java.util.List;
 
 @Entity
+@DiscriminatorValue("ply")
 @Table(name = "player")
 public class Player extends UserRole{
     private Integer rating;

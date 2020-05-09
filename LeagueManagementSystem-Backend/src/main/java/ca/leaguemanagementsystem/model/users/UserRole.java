@@ -2,8 +2,9 @@ package ca.leaguemanagementsystem.model.users;
 
 import javax.persistence.*;
 
-@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+@Inheritance(strategy = InheritanceType.JOINED)
 @Entity
+@DiscriminatorColumn(name = "user_role_type")
 public class UserRole {
     @Id
     @GeneratedValue

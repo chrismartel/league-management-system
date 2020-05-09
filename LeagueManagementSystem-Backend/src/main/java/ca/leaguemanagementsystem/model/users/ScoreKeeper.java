@@ -2,12 +2,14 @@ package ca.leaguemanagementsystem.model.users;
 
 import ca.leaguemanagementsystem.model.leagues.events.assignments.ScoreKeeperAssignment;
 
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import java.util.List;
 
 @Entity
+@DiscriminatorValue("sk")
 @Table(name = "scoreKeeper")
 public class ScoreKeeper extends UserRole{
     private int nbYearsExperience;
