@@ -2,12 +2,10 @@ package ca.leaguemanagementsystem.model.leagues.events;
 
 import ca.leaguemanagementsystem.model.users.Player;
 
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 
 @Entity
+@Table (name = "playerStat")
 public class PlayerStat {
 
     //unidirectional many to one association with player
@@ -23,12 +21,12 @@ public class PlayerStat {
         this.player = player;
     }
 
+    //bidirectional one to one association with game
+    @OneToOne(mappedBy = "playerStat")
     private Game game;
 
-    //bidirectional one to one association with game
-    @OneToOne(optional = true)
     public Game getGame(){
-        return this.game;
+        return game;
     }
 
     public void setGame(Game game){
@@ -39,7 +37,7 @@ public class PlayerStat {
     private Integer points;
 
     public Integer getPoints() {
-        return this.points;
+        return points;
     }
 
     public void setPoints(Integer value) {
@@ -49,7 +47,7 @@ public class PlayerStat {
     private Integer rebounds;
 
     public Integer getRebounds() {
-        return this.rebounds;
+        return rebounds;
     }
 
     public void setRebounds(Integer value) {
@@ -59,7 +57,7 @@ public class PlayerStat {
     private Integer assists;
 
     public Integer getAssists() {
-        return this.assists;
+        return assists;
     }
 
     public void setAssists(Integer value) {
@@ -69,7 +67,7 @@ public class PlayerStat {
     private Integer steals;
 
     public Integer getSteals() {
-        return this.steals;
+        return steals;
     }
 
     public void setSteals(Integer value) {
@@ -79,7 +77,7 @@ public class PlayerStat {
     private Integer blocks;
 
     public Integer getBlocks() {
-        return this.blocks;
+        return blocks;
     }
 
     public void setBlocks(Integer value) {
@@ -89,7 +87,7 @@ public class PlayerStat {
     private Integer numberOfThreePointers;
 
     public Integer getNumberOfThreePointers() {
-        return this.numberOfThreePointers;
+        return numberOfThreePointers;
     }
 
     public void setNumberOfThreePointers(Integer value) {
@@ -99,7 +97,7 @@ public class PlayerStat {
     private Integer numberOfFreeThrows;
 
     public Integer getNumberOfFreeThrows() {
-        return this.numberOfFreeThrows;
+        return numberOfFreeThrows;
     }
 
     public void setNumberOfFreeThrows(Integer value) {
@@ -109,7 +107,7 @@ public class PlayerStat {
     private Double freeThrowPercentage;
 
     public Double getFreeThrowPercentage() {
-        return this.freeThrowPercentage;
+        return freeThrowPercentage;
     }
 
     public void setFreeThrowPercentage(Double value) {
