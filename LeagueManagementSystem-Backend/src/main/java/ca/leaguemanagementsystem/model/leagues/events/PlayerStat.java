@@ -114,6 +114,23 @@ public class PlayerStat {
         this.freeThrowPercentage = value;
     }
 
+    private Integer turnovers;
 
+    public Integer getTurnovers() {
+        return turnovers;
+    }
 
+    public void setTurnovers(Integer turnovers) {
+        turnovers = turnovers;
+    }
+
+    private Integer fouls;
+
+    public Integer getFouls() {
+        return fouls;
+    }
+
+    public void setFouls(Integer fouls) {
+        this.fouls = fouls;
+    }
 }
