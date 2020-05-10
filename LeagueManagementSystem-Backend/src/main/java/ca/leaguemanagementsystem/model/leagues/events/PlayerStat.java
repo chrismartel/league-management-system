@@ -9,7 +9,7 @@ import javax.persistence.*;
 public class PlayerStat {
 
     //unidirectional many to one association with player
-    @ManyToOne
+    @ManyToOne(optional = false)
     @JoinColumn(name = "fk_player")
     private Player player;
 

@@ -4,8 +4,9 @@ import javax.persistence.*;
 import java.sql.Date;
 import java.sql.Time;
 
-@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+@Inheritance(strategy = InheritanceType.JOINED)
 @Entity
+@DiscriminatorColumn(name = "event_type")
 public class EventType {
     @Id
     @GeneratedValue
