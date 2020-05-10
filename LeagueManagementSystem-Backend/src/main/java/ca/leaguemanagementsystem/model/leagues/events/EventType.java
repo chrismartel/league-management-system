@@ -1,5 +1,7 @@
 package ca.leaguemanagementsystem.model.leagues.events;
 
+import ca.leaguemanagementsystem.model.leagues.Location;
+import ca.leaguemanagementsystem.model.leagues.ScheduleType;
 import ca.leaguemanagementsystem.model.leagues.events.assignments.Assignment;
 
 import javax.persistence.*;
@@ -36,6 +38,28 @@ public class EventType {
 
     public void setEventTypes(List<EventType> eventTypes) {
         this.eventTypes = eventTypes;
+    }
+
+    @ManyToOne
+    private Location locations;
+
+    public Location getLocations() {
+        return locations;
+    }
+
+    public void setLocations(Location value) {
+        this.locations = value;
+    }
+
+    @OneToOne(mappedBy = "evtype")
+    private ScheduleType scheduleType;
+
+    public ScheduleType getScheduleType() {
+        return scheduleType;
+    }
+
+    public void setScheduleType(ScheduleType scheduleType) {
+        this.scheduleType = scheduleType;
     }
 
     //attributes
