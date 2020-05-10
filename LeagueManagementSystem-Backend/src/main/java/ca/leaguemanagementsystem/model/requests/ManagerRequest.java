@@ -5,9 +5,9 @@ import ca.leaguemanagementsystem.model.users.User;
 
 import javax.persistence.*;
 
-@Inheritance(strategy = InheritanceType.JOINED)
 @Entity
-@DiscriminatorColumn(name = "manager_Request")
+@DiscriminatorValue("mr")
+@Table(name = "manager_Request")
 public class ManagerRequest extends Request{
 
     /* associations */
@@ -34,5 +34,5 @@ public class ManagerRequest extends Request{
         this.user = user;
     }
 
-    
+
 }
