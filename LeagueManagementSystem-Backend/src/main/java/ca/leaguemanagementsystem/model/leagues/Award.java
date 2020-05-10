@@ -4,8 +4,10 @@ import ca.leaguemanagementsystem.model.users.Player;
 
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "award")
 public class Award {
 
     @ManyToOne
