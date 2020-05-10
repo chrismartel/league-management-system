@@ -12,10 +12,14 @@ import java.util.List;
 @DiscriminatorValue("sk")
 @Table(name = "scoreKeeper")
 public class ScoreKeeper extends UserRole{
-    private int nbYearsExperience;
 
+    /* associations */
     @OneToMany(mappedBy = "scoreKeeper")
     private List<ScoreKeeperAssignment> scoreKeeperAssignments;
+
+    private int nbYearsExperience;
+
+
 
     public int getNbYearsExperience() {
         return nbYearsExperience;

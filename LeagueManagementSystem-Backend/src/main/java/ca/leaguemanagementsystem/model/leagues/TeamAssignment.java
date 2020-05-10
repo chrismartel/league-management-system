@@ -8,13 +8,11 @@ import java.util.Date;
 @Entity
 @Table(name = "team_assignment")
 public class TeamAssignment {
-    @ManyToOne
-    private Player player;
-    @ManyToOne
-    private Team team;
 
-    @Temporal(TemporalType.DATE)
-    private Date date;
+    /* associations */
+
+    @ManyToOne
+    private Player player;  // assigned player
 
     public Player getPlayer() {
         return player;
@@ -24,6 +22,10 @@ public class TeamAssignment {
         this.player = player;
     }
 
+
+    @ManyToOne
+    private Team team;  // team assigned to
+
     public Team getTeam() {
         return team;
     }
@@ -31,6 +33,25 @@ public class TeamAssignment {
     public void setTeam(Team team) {
         this.team = team;
     }
+
+
+    /* attributes */
+
+    @Id
+    @GeneratedValue
+    private Integer teamAssignmentId;
+
+    public Integer getTeamAssignmentId() {
+        return teamAssignmentId;
+    }
+
+    public void setTeamAssignmentId(Integer teamAssignmentId) {
+        this.teamAssignmentId = teamAssignmentId;
+    }
+
+
+    @Temporal(TemporalType.DATE)
+    private Date date;  // date of assignment
 
     public Date getDate() {
         return date;
