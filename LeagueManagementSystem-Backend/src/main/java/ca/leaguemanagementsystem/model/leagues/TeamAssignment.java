@@ -2,9 +2,11 @@ package ca.leaguemanagementsystem.model.leagues;
 
 import ca.leaguemanagementsystem.model.users.Player;
 
+
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import java.util.Date;
 
 @Entity
 @Table(name = "teamAssignment")
@@ -12,6 +14,10 @@ public class TeamAssignment {
 
     @ManyToOne
     private Player player;
+
+    @Temporal(TemporalType.DATE)
+    private Date date;
+
 
     public Player getPlayer() {
         return player;
@@ -21,8 +27,10 @@ public class TeamAssignment {
         this.player = player;
     }
 
+
     @ManyToOne
     private Team team;
+
 
     public Team getTeam() {
         return team;
@@ -32,13 +40,12 @@ public class TeamAssignment {
         this.team = team;
     }
 
-    private String message;
-
-    public String getMessage() {
-        return message;
+    public Date getDate() {
+        return date;
     }
 
-    public void setMessage(String message) {
-        this.message = message;
+    public void setDate(Date date) {
+        this.date = date;
+
     }
 }
