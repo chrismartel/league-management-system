@@ -1,7 +1,7 @@
 package ca.leaguemanagementsystem.model.leagues.events;
 
 import ca.leaguemanagementsystem.model.leagues.Team;
-import ca.leaguemanagementsystem.model.leagues.events.assignments.Assignment;
+import ca.leaguemanagementsystem.model.leagues.events.assignments.GameAssignment;
 import ca.leaguemanagementsystem.model.notifications.GameNotification;
 import org.springframework.expression.spel.ast.Assign;
 
@@ -52,14 +52,14 @@ public class Game extends EventType{
             cascade = CascadeType.ALL,
             orphanRemoval = true
     )
-    private List<Assignment> assignments;
+    private List<GameAssignment> gameAssignments;
 
-    public List<Assignment> getAssignments() {
-        return assignments;
+    public List<GameAssignment> getGameAssignments() {
+        return gameAssignments;
     }
 
-    public void setAssignments(List<Assignment> assignments) {
-        this.assignments = assignments;
+    public void setGameAssignmentsAssignments(List<GameAssignment> gameAssignments) {
+        this.gameAssignments = gameAssignments;
     }
 
     //attributes
