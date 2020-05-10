@@ -1,4 +1,25 @@
 package ca.leaguemanagementsystem.model.notifications;
 
-public class GameNotification {
+import ca.leaguemanagementsystem.model.leagues.events.Game;
+
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+@Entity
+@DiscriminatorValue("gn")
+@Table(name = "game_notification")
+public class GameNotification extends Notification{
+
+    @ManyToOne
+    private Game game;
+
+    public Game getGame() {
+        return game;
+    }
+
+    public void setGame(Game game) {
+        this.game = game;
+    }
 }
