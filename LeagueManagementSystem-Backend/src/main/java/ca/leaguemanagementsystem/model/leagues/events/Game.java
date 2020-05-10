@@ -13,6 +13,8 @@ import java.util.List;
 @Table(name = "game")
 public class Game extends EventType{
 
+    /* associations */
+
     @OneToOne
     @JoinColumn(name = "fk_playerStat")
     private PlayerStat playerStat;
@@ -36,15 +38,26 @@ public class Game extends EventType{
         this.gameNotifications = gameNotifications;
     }
 
-    @OneToMany(mappedBy = "game")
-    private List<Team> teams;
+    @OneToOne(mappedBy = "teamA")
+    private Team teamA;
 
-    public List <Team> getTeams(){
-        return teams;
+    public Team getTeamA() {
+        return teamA;
     }
 
-    public void setTeams(List<Team> teams){
-        this.teams = teams;
+    public void setTeamA(Team teamA) {
+        this.teamA = teamA;
+    }
+
+    @OneToOne(mappedBy = "teamB")
+    private Team teamB;
+
+    public Team getTeamB() {
+        return teamB;
+    }
+
+    public void setTeamB(Team teamB) {
+        this.teamB = teamB;
     }
 
     @OneToMany(
@@ -62,7 +75,8 @@ public class Game extends EventType{
         this.gameAssignments = gameAssignments;
     }
 
-    //attributes
+    /* attributes */
+    
     private GameState gameState;
 
     public GameState getGameState() {
