@@ -2,17 +2,22 @@ package ca.leaguemanagementsystem.model.leagues;
 
 import ca.leaguemanagementsystem.model.users.Player;
 
+
 import javax.persistence.*;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 import java.util.Date;
 
 @Entity
-@Table(name = "team_assignment")
+@Table(name = "teamAssignment")
 public class TeamAssignment {
+
 
     /* associations */
 
     @ManyToOne
     private Player player;  // assigned player
+
 
     public Player getPlayer() {
         return player;
@@ -25,6 +30,7 @@ public class TeamAssignment {
 
     @ManyToOne
     private Team team;  // team assigned to
+
 
     public Team getTeam() {
         return team;
@@ -59,5 +65,6 @@ public class TeamAssignment {
 
     public void setDate(Date date) {
         this.date = date;
+
     }
 }
