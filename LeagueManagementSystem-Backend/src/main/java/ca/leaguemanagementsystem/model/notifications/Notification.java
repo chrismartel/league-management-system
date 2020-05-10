@@ -3,6 +3,8 @@ package ca.leaguemanagementsystem.model.notifications;
 import ca.leaguemanagementsystem.model.users.User;
 
 import javax.persistence.*;
+import java.sql.Time;
+import java.util.Date;
 
 @Inheritance(strategy = InheritanceType.JOINED)
 @Entity
@@ -28,5 +30,27 @@ public class Notification {
 
     public void setMessage(String message) {
         this.message = message;
+    }
+
+    @Temporal(TemporalType.DATE)
+    private Date date;
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    @Temporal(TemporalType.TIME)
+    private Time time;
+
+    public Time getTime() {
+        return time;
+    }
+
+    public void setTime(Time time) {
+        this.time = time;
     }
 }

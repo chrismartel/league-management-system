@@ -3,9 +3,7 @@ package ca.leaguemanagementsystem.model.leagues;
 import ca.leaguemanagementsystem.model.users.Player;
 
 
-import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
