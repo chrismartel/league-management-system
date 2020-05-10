@@ -2,6 +2,7 @@ package ca.leaguemanagementsystem.model.leagues;
 
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
@@ -9,11 +10,12 @@ import javax.persistence.Table;
 @Table(name = "pickUpLeague")
 public class PickUpLeague extends LeagueType{
 
+    @Id
+    private String scheduleName;
     //attributes
     private Integer minNbPlayers;
     private Integer maxNbPlayers;
     private ScheduleType scheduleType;
-    private String scheduleName;
 
     public Integer getMinNbPlayers() {
         return minNbPlayers;
