@@ -52,7 +52,6 @@ public class Game extends EventType{
             cascade = CascadeType.ALL,
             orphanRemoval = true
     )
-
     private List<Assignment> assignments;
 
     public List<Assignment> getAssignments() {

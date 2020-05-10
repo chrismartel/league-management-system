@@ -1,8 +1,11 @@
 package ca.leaguemanagementsystem.model.leagues.events;
 
+import ca.leaguemanagementsystem.model.leagues.events.assignments.Assignment;
+
 import javax.persistence.*;
 import java.sql.Date;
 import java.sql.Time;
+import java.util.List;
 
 @Inheritance(strategy = InheritanceType.JOINED)
 @Entity
@@ -18,6 +21,21 @@ public class EventType {
 
     public void setEventTypeId(long eventTypeId){
         this.eventTypeId = eventTypeId;
+    }
+
+    @OneToMany(
+            mappedBy = "eventType",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true
+    )
+    private List<EventType> eventTypes;
+
+    public List<EventType> getEventTypes() {
+        return eventTypes;
+    }
+
+    public void setEventTypes(List<EventType> eventTypes) {
+        this.eventTypes = eventTypes;
     }
 
     //attributes
