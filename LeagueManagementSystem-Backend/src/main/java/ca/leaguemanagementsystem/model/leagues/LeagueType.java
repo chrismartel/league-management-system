@@ -8,12 +8,8 @@ import java.util.List;
 @Entity
 @DiscriminatorColumn(name = "league_type")
 public class LeagueType {
-    @Id
-    @GeneratedValue
-    private String leagueName;
 
-    private Date startDate;
-    private Date endDate;
+    /* associations */
 
     @OneToMany(
             mappedBy = "leagueRequested",
@@ -30,9 +26,10 @@ public class LeagueType {
         this.awards = awards;
     }
 
-    @ManyToMany(
+    @OneToMany(
             mappedBy = "leagueLocation",
-            cascade = CascadeType.ALL
+            cascade = CascadeType.ALL,
+            orphanRemoval = true
     )
     private List<Location> locations;
 
@@ -73,6 +70,11 @@ public class LeagueType {
     }
 
     //attributes
+
+    @Id
+    @GeneratedValue
+    private String leagueName;          // Id for database
+
     public String getLeagueName() {
         return leagueName;
     }
@@ -81,6 +83,9 @@ public class LeagueType {
         this.leagueName = leagueName;
     }
 
+    @Temporal(TemporalType.DATE)
+    private Date startDate;             // Start date of the league
+
     public Date getStartDate() {
         return startDate;
     }
@@ -88,6 +93,9 @@ public class LeagueType {
     public void setStartDate(Date startDate) {
         this.startDate = startDate;
     }
+
+    @Temporal(TemporalType.DATE)
+    private Date endDate;               // End date of the league
 
     public Date getEndDate() {
         return endDate;
