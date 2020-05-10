@@ -19,6 +19,17 @@ public class Award {
         this.player = player;
     }
 
+    @ManyToOne
+    private LeagueType leagueType;
+
+    public LeagueType getLeagueType() {
+        return leagueType;
+    }
+
+    public void setLeagueType(LeagueType leagueType) {
+        this.leagueType = leagueType;
+    }
+
     //attributes
     private String name;
 
