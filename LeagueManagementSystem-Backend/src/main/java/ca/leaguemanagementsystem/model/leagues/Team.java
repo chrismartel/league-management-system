@@ -1,5 +1,6 @@
 package ca.leaguemanagementsystem.model.leagues;
 
+
 import ca.leaguemanagementsystem.model.leagues.events.Game;
 
 import javax.persistence.*;
@@ -10,14 +11,20 @@ import java.util.List;
 public class Team {
 
     @Id
-    private String teamName;
-    private String imageURL;
-    private Integer teamNumber;
-    private Integer wins;
-    private Integer losses;
-    private Integer ties;
-    private Integer pointsAgainst;
-    private Integer pointsFor;
+    @GeneratedValue
+    private int teamId;
+
+    private String teamName;        // team name
+    private String imageURL;    // have to figure out how to add images
+    private int teamNumber;     // number of the team in the league
+    private int wins;           // # of wins in the season
+    private int losses;         // # of losses in the season
+    private int ties;           // # of ties in the season
+    private int pointsAgainst;  // cumulative of points accorded during the season
+    private int pointsFor;      // cumulative of points made during the season
+
+
+
 
     @OneToMany(mappedBy = "myTeams")
     private List<TeamAssignment> teamAssignments;

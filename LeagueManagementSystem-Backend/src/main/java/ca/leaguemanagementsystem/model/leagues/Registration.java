@@ -8,28 +8,30 @@ import java.util.Date;
 
 @Entity
 @Table(name = "registration")
-
 public class Registration {
 
+    /* associations */
+    @ManyToOne
+    private Membership membership;  // league membership
+
+    @ManyToOne
+    private ScheduleType season;    // season registered to
+
+    /* attributes */
     @Id
     @GeneratedValue
     private long registrationId;
 
     @Temporal(TemporalType.DATE)
-    private Date date;
+    private Date date;  // date of the registration
 
-    @ManyToOne
-    private Membership membership;
+    private int playerNumber;   // player number for the season
 
-    @ManyToOne
-    private ScheduleType season;
+    private boolean isSuspended;    // is player suspended
 
-    private int playerNumber;
+    private int nbTF;   // # of accumulated technical fouls
 
-    private boolean isSuspended;
-
-    private int nbTF;
-
+    /* getters & setters */
     public int getPlayerNumber() {
         return playerNumber;
     }
