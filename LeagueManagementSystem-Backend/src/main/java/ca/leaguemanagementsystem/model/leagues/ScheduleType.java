@@ -9,6 +9,18 @@ import java.util.Date;
 public class ScheduleType {
 
     /* associations */
+    @ManyToOne
+    private LeagueType leagueType;
+
+    public LeagueType getLeagueType() {
+        return leagueType;
+    }
+
+    public void setLeagueType(LeagueType leagueType) {
+        this.leagueType = leagueType;
+    }
+
+    @
 
     /* attributes */
     @Id

@@ -2,7 +2,6 @@ package ca.leaguemanagementsystem.model.leagues.events;
 
 import ca.leaguemanagementsystem.model.leagues.Location;
 import ca.leaguemanagementsystem.model.leagues.ScheduleType;
-import ca.leaguemanagementsystem.model.leagues.events.assignments.Assignment;
 
 import javax.persistence.*;
 import java.sql.Date;
@@ -13,17 +12,8 @@ import java.util.List;
 @Entity
 @DiscriminatorColumn(name = "event_type")
 public class EventType {
-    @Id
-    @GeneratedValue
-    private long eventTypeId;
 
-    public long getEventTypeId(){
-        return eventTypeId;
-    }
-
-    public void setEventTypeId(long eventTypeId){
-        this.eventTypeId = eventTypeId;
-    }
+    /* Associations */
 
     @OneToMany(
             mappedBy = "eventType",
@@ -51,7 +41,7 @@ public class EventType {
         this.locations = value;
     }
 
-    @OneToOne(mappedBy = "evtype")
+    @ManyToOne
     private ScheduleType scheduleType;
 
     public ScheduleType getScheduleType() {
@@ -62,8 +52,21 @@ public class EventType {
         this.scheduleType = scheduleType;
     }
 
-    //attributes
-    private Time startTime;
+    /* attributes */
+    @Id
+    @GeneratedValue
+    private long eventTypeId;               // Id for database
+
+    public long getEventTypeId(){
+        return eventTypeId;
+    }
+
+    public void setEventTypeId(long eventTypeId){
+        this.eventTypeId = eventTypeId;
+    }
+
+    @Temporal(TemporalType.TIME)
+    private Time startTime;                 // Start time of the event
 
     public Time getStartTime() {
         return startTime;
@@ -73,7 +76,8 @@ public class EventType {
         this.startTime = startTime;
     }
 
-    private Time endTime;
+    @Temporal(TemporalType.TIME)
+    private Time endTime;                   // End time of the event
 
     public Time getEndTime() {
         return endTime;
@@ -83,7 +87,8 @@ public class EventType {
         this.endTime = endTime;
     }
 
-    private Date date;
+    @Temporal(TemporalType.DATE)
+    private Date date;                      // Date of the event
 
     public Date getDate(){
         return date;
