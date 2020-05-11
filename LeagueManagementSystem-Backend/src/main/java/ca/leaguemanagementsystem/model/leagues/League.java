@@ -12,11 +12,11 @@ public class League {
     /* associations */
 
     @OneToMany(
-            mappedBy = "leagueRequested",
+            mappedBy = "league",
             cascade = CascadeType.ALL,
             orphanRemoval = true
     )
-    private List<Award> awards;
+    private List<Award> awards; // league awards
 
     public List<Award> getAwards() {
         return awards;
@@ -26,12 +26,13 @@ public class League {
         this.awards = awards;
     }
 
+
     @OneToMany(
-            mappedBy = "leagueLocation",
+            mappedBy = "league",
             cascade = CascadeType.ALL,
             orphanRemoval = true
     )
-    private List<Location> locations;
+    private List<Location> locations;   // possible locations for games
 
     public List<Location> getLocations() {
         return locations;
@@ -41,25 +42,27 @@ public class League {
         this.locations = locations;
     }
 
+
     @OneToMany(
-            mappedBy = "leagueSchedule",
+            mappedBy = "league",
             cascade = CascadeType.ALL,
             orphanRemoval = true
     )
-    private List<ScheduleType> scheduleTypes;
+    private List<Schedule> schedules;   // schedules history of league
 
-    public List<ScheduleType> getScheduleTypes() {
-        return scheduleTypes;
+    public List<Schedule> getSchedules() {
+        return schedules;
     }
 
-    public void setScheduleTypes(List<ScheduleType> scheduleTypes) {
-        this.scheduleTypes = scheduleTypes;
+    public void setSchedules(List<Schedule> schedules) {
+        this.schedules = schedules;
     }
+
 
     @OneToMany(
             mappedBy = "memberOf"
     )
-    private List<Membership> memberships;
+    private List<Membership> memberships;   // league memberships
 
     public List<Membership> getMemberships() {
         return memberships;
@@ -69,7 +72,8 @@ public class League {
         this.memberships = memberships;
     }
 
-    //attributes
+
+    /* attributes */
 
     @Id
     @GeneratedValue

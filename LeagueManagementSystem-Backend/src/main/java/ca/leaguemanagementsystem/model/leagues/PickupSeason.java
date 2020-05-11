@@ -8,5 +8,5 @@ import javax.persistence.Table;
 @Entity
 @DiscriminatorValue("pcks")
 @Table(name = "pickupSeason")
-public class PickupSeason extends ScheduleType{
+public class PickupSeason extends Schedule{
 }

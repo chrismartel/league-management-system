@@ -60,7 +60,19 @@ public class Schedule {
     /* attributes */
 
     @Id
-    private String scheduleName;            // id for database
+    @GeneratedValue
+    private Integer scheduleId;     // Id for database
+
+    public Integer getScheduleId() {
+        return scheduleId;
+    }
+
+    public void setScheduleId(Integer scheduleId) {
+        this.scheduleId = scheduleId;
+    }
+
+
+    private String scheduleName;            // name of schedule
 
     public String getScheduleName() {
         return scheduleName;

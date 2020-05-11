@@ -3,16 +3,18 @@ package ca.leaguemanagementsystem.model.notifications;
 import ca.leaguemanagementsystem.model.users.User;
 
 import javax.persistence.*;
+import java.sql.Date;
 import java.sql.Time;
-import java.util.Date;
 
 @Inheritance(strategy = InheritanceType.JOINED)
 @Entity
 @DiscriminatorColumn(name = "notification")
 public class Notification {
 
+    /* associations */
+
     @ManyToOne
-    private User user;
+    private User user;  // user to which the notification is sent
 
     public User getUser() {
         return user;
@@ -22,7 +24,10 @@ public class Notification {
         this.user = user;
     }
 
-    private String message;
+
+    /* attributes */
+
+    private String message; // message of the notification
 
     public String getMessage() {
         return message;
@@ -32,25 +37,25 @@ public class Notification {
         this.message = message;
     }
 
-    @Temporal(TemporalType.DATE)
-    private Date date;
 
-    public Date getDate() {
-        return date;
+    private Date scheduledDate; // scheduled date for the notification
+
+    public Date getScheduledDate() {
+        return scheduledDate;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public void setScheduledDate(Date scheduledDate) {
+        this.scheduledDate = scheduledDate;
     }
 
-    @Temporal(TemporalType.TIME)
-    private Time time;
 
-    public Time getTime() {
-        return time;
+    private Time scheduledTime; // scheduled time for the notification
+
+    public Time getScheduledTime() {
+        return scheduledTime;
     }
 
-    public void setTime(Time time) {
-        this.time = time;
+    public void setScheduledTime(Time scheduledTime) {
+        this.scheduledTime = scheduledTime;
     }
 }

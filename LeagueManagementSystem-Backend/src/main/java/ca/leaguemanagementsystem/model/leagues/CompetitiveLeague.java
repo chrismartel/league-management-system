@@ -5,7 +5,7 @@ import javax.persistence.*;
 @Entity
 @DiscriminatorValue("cmpl")
 @Table(name = "competitiveLeague")
-public class CompetitiveLeague extends LeagueType{
+public class CompetitiveLeague extends League{
 
     private Integer minNbTeams;
     private Integer maxNbTeams;

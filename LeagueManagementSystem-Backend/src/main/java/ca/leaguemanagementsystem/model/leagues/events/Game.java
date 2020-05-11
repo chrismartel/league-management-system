@@ -12,7 +12,7 @@ import java.util.List;
 @Entity
 @DiscriminatorValue("game")
 @Table(name = "game")
-public class Game extends EventType{
+public class Game extends Event{
 
 
     /* associations */
@@ -22,19 +22,19 @@ public class Game extends EventType{
             cascade = CascadeType.ALL,
             orphanRemoval = true
     )
-    private PlayerStat playerStat;
+    private List<PlayerStat> playerStats;   // player stats for players attending the game
 
-    public PlayerStat getPlayerStat() {
-        return playerStat;
+    public List<PlayerStat> getPlayerStats() {
+        return playerStats;
     }
 
-    public void setPlayerStat(PlayerStat playerStat) {
-        this.playerStat = playerStat;
+    public void setPlayerStats(List<PlayerStat> playerStats) {
+        this.playerStats = playerStats;
     }
 
 
     @OneToMany(mappedBy = "game")
-    private List<GameNotification> gameNotifications;
+    private List<GameNotification> gameNotifications;   // notifications generated for a game
 
     public List <GameNotification> getGameNotifications(){
         return gameNotifications;
@@ -46,7 +46,7 @@ public class Game extends EventType{
 
 
     @OneToMany(mappedBy = "game")
-    private List<GameTeamAssignment> gameTeamAssignments;
+    private List<GameTeamAssignment> gameTeamAssignments;   // teams assigned to the game (must be 2)
 
     public List<GameTeamAssignment> getGameTeamAssignments() {
         return gameTeamAssignments;
@@ -62,7 +62,7 @@ public class Game extends EventType{
             cascade = CascadeType.ALL,
             orphanRemoval = true
     )
-    private List<GameAssignment> gameAssignments;
+    private List<GameAssignment> gameAssignments;   // referee and score keeping assignments for the game
 
     public List<GameAssignment> getGameAssignments() {
         return gameAssignments;
@@ -85,7 +85,9 @@ public class Game extends EventType{
         this.gameState = gameState;
     }
 
-    private Integer scoreTeamA;
+
+
+    private Integer scoreTeamA; // final score of Team A
 
     public Integer getScoreTeamA(){
         return scoreTeamA;
@@ -95,7 +97,9 @@ public class Game extends EventType{
         this.scoreTeamA = scoreTeamA;
     }
 
-    private Integer scoreTeamB;
+
+
+    private Integer scoreTeamB; // final score of Team B
 
     public Integer getScoreTeamB(){
         return scoreTeamB;

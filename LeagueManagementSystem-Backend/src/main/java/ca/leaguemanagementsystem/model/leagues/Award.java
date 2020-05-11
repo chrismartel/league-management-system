@@ -10,8 +10,10 @@ import javax.persistence.Table;
 @Table(name = "award")
 public class Award {
 
+    /* associations */
+
     @ManyToOne
-    private Player player;
+    private Player player;  // player to which the award is deserved
 
     public Player getPlayer() {
         return player;
@@ -21,25 +23,28 @@ public class Award {
         this.player = player;
     }
 
+
     @ManyToOne
-    private LeagueType leagueType;
+    private League league;  // league in which the award was deserved SHOULD BE SEASON
 
-    public LeagueType getLeagueType() {
-        return leagueType;
+    public League getLeague() {
+        return league;
     }
 
-    public void setLeagueType(LeagueType leagueType) {
-        this.leagueType = leagueType;
+    public void setLeague(League league) {
+        this.league = league;
     }
 
-    //attributes
-    private String name;
 
-    public String getName() {
-        return name;
+    /* attributes */
+
+    private String awardName;
+
+    public String getAwardName() {
+        return awardName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setAwardName(String awardName) {
+        this.awardName = awardName;
     }
 }

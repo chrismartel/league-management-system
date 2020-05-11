@@ -25,16 +25,15 @@ public class Membership {
 
 
     @ManyToOne
-    private LeagueType league;  // membership to which league
+    private League league;  // membership to which league
 
-    public LeagueType getLeague() {
+    public League getLeague() {
         return league;
     }
 
-    public void setLeague(LeagueType league) {
+    public void setLeague(League league) {
         this.league = league;
     }
-
 
     @OneToMany(mappedBy = "membership")
     private List<Registration> registrations;   // season registrations through the league membership

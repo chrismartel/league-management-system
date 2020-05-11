@@ -6,10 +6,12 @@ import java.util.List;
 @Entity
 @DiscriminatorValue("ssn")
 @Table(name = "season")
-public class Season extends ScheduleType{
+public class Season extends Schedule{
+
+    /* associations */
 
     @OneToOne
-    private Playoff playoff;
+    private Playoff playoff;    //
 
     public Playoff getPlayoff() {
         return playoff;
@@ -18,6 +20,7 @@ public class Season extends ScheduleType{
     public void setPlayoff(Playoff playoff) {
         this.playoff = playoff;
     }
+
 
     @OneToMany(
             mappedBy = "teamSeason",
@@ -34,7 +37,10 @@ public class Season extends ScheduleType{
         this.teams = teams;
     }
 
-    private Integer price;
+
+    /* attributes */
+
+    private Integer price;  // price for the season
 
     public Integer getPrice() {
         return price;
@@ -44,5 +50,14 @@ public class Season extends ScheduleType{
         this.price = price;
     }
 
+
     private boolean isActive;   // is the season currently active
+
+    public boolean isActive() {
+        return isActive;
+    }
+
+    public void setActive(boolean active) {
+        isActive = active;
+    }
 }

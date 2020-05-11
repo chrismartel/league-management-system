@@ -1,5 +1,7 @@
 package ca.leaguemanagementsystem.model.leagues;
 
+import ca.leaguemanagementsystem.model.leagues.events.Event;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -10,25 +12,25 @@ public class Location {
     /* associations */
 
     @ManyToOne
-    private LeagueType leagueType;
+    private League league;
 
-    public LeagueType getLeagueType() {
-        return leagueType;
+    public League getLeague() {
+        return league;
     }
 
-    public void setLeagueType(LeagueType leagueType) {
-        this.leagueType = leagueType;
+    public void setLeague(League league) {
+        this.league = league;
     }
 
     @OneToMany(mappedBy = "location")
-    private List<EventType> eventType;
+    private List<Event> event;
 
-    public List<EventType> getEventType() {
-        return eventType;
+    public List<Event> getEvent() {
+        return event;
     }
 
-    public void setEventType(List<EventType> eventType) {
-        this.eventType = eventType;
+    public void setEvent(List<Event> event) {
+        this.event = event;
     }
 
     /* attributes */

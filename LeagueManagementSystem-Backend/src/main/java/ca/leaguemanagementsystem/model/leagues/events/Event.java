@@ -1,6 +1,7 @@
 package ca.leaguemanagementsystem.model.leagues.events;
 
 import ca.leaguemanagementsystem.model.leagues.Location;
+import ca.leaguemanagementsystem.model.leagues.Schedule;
 
 import javax.persistence.*;
 import java.sql.Date;
@@ -43,28 +44,31 @@ public class Event {
 
 
     @ManyToOne
-    private ScheduleType scheduleType;
+    private Schedule schedule;  // schedule in which the event is scheduled
 
-    public ScheduleType getScheduleType() {
-        return scheduleType;
+    public Schedule getSchedule() {
+        return schedule;
     }
 
-    public void setScheduleType(ScheduleType scheduleType) {
-        this.scheduleType = scheduleType;
+    public void setSchedule(Schedule schedule) {
+        this.schedule = schedule;
     }
+
 
     /* attributes */
+
     @Id
     @GeneratedValue
-    private long eventTypeId;               // Id for database
+    private long eventId;               // Id for database
 
-    public long getEventTypeId(){
-        return eventTypeId;
+    public long getEventId() {
+        return eventId;
     }
 
-    public void setEventTypeId(long eventTypeId){
-        this.eventTypeId = eventTypeId;
+    public void setEventId(long eventId) {
+        this.eventId = eventId;
     }
+
 
     @Temporal(TemporalType.TIME)
     private Time startTime;                 // Start time of the event
@@ -77,6 +81,7 @@ public class Event {
         this.startTime = startTime;
     }
 
+
     @Temporal(TemporalType.TIME)
     private Time endTime;                   // End time of the event
 
@@ -87,6 +92,7 @@ public class Event {
     public void setEndTime(Time endTime) {
         this.endTime = endTime;
     }
+
 
     @Temporal(TemporalType.DATE)
     private Date date;                      // Date of the event
