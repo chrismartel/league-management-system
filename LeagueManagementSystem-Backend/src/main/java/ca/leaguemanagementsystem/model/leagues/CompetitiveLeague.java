@@ -196,35 +196,66 @@ public class CompetitiveLeague extends League{
     }
 
 
-    private boolean recordsThreePointers;  // does the league records # of 3 pointers made
+    private boolean recordsFieldGoalsMade;  // does the league records # of FG made
 
-    public boolean isRecordsThreePointers() {
-        return recordsThreePointers;
+    public boolean isRecordsFieldGoalsMade() {
+        return recordsFieldGoalsMade;
     }
 
-    public void setRecordsThreePointers(boolean recordsThreePointers) {
-        this.recordsThreePointers = recordsThreePointers;
+    public void setRecordsFieldGoalsMade(boolean recordsFieldGoalsMade) {
+        this.recordsFieldGoalsMade = recordsFieldGoalsMade;
+    }
+
+    private boolean recordsFieldGoalsAttempted;  // does the league records the # of FG attempted
+
+    public boolean isRecordsFieldGoalsAttempted() {
+        return recordsFieldGoalsAttempted;
+    }
+
+    public void setRecordsFieldGoalsAttempted(boolean recordsFieldGoalsAttempted) {
+        this.recordsFieldGoalsAttempted = recordsFieldGoalsAttempted;
     }
 
 
-    private boolean recordsFreeThrows;  // does the league records free throws made
+    private boolean recordsThreePtsMade;  // does the league records # of 3 pointers made
 
-    public boolean isRecordsFreeThrows() {
-        return recordsFreeThrows;
+    public boolean isRecordsThreePtsMade() {
+        return recordsThreePtsMade;
     }
 
-    public void setRecordsFreeThrows(boolean recordsFreeThrows) {
-        this.recordsFreeThrows = recordsFreeThrows;
+    public void setRecordsThreePtsMade(boolean recordsThreePtsMade) {
+        this.recordsThreePtsMade = recordsThreePtsMade;
+    }
+
+    private boolean recordsThreePtsAttempted;  // does the league records the # of 3 pointers attempted
+
+    public boolean isRecordsThreePtsAttempted() {
+        return recordsThreePtsAttempted;
+    }
+
+    public void setRecordsThreePtsAttempted(boolean recordsThreePtsAttempted) {
+        this.recordsThreePtsAttempted = recordsThreePtsAttempted;
     }
 
 
-    private boolean recordsFreeThrowPercentage;  // does the league records free throw %
+    private boolean recordsFreeThrowsMade;  // does the league records free throws made
 
-    public boolean isRecordsFreeThrowPercentage() {
-        return recordsFreeThrowPercentage;
+    public boolean isRecordsFreeThrowsMade() {
+        return recordsFreeThrowsMade;
     }
 
-    public void setRecordsFreeThrowPercentage(boolean recordsFreeThrowPercentage) {
-        this.recordsFreeThrowPercentage = recordsFreeThrowPercentage;
+    public void setRecordsFreeThrowsMade(boolean recordsFreeThrowsMade) {
+        this.recordsFreeThrowsMade = recordsFreeThrowsMade;
+    }
+
+
+    private boolean recordsFreeThrowsAttempted;  // does the league records free throws attempted
+
+    public boolean isRecordsFreeThrowsAttempted() {
+        return recordsFreeThrowsAttempted;
+    }
+
+    public void setRecordsFreeThrowsAttempted(boolean recordsFreeThrowsAttempted) {
+        this.recordsFreeThrowsAttempted = recordsFreeThrowsAttempted;
     }
 }
