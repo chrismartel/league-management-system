@@ -4,8 +4,10 @@ import ca.leaguemanagementsystem.model.users.Player;
 
 
 import javax.persistence.*;
+
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
 import java.util.Date;
 
 @Entity

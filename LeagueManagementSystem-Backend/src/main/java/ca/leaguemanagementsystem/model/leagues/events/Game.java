@@ -1,7 +1,7 @@
 package ca.leaguemanagementsystem.model.leagues.events;
 
 import ca.leaguemanagementsystem.model.leagues.Team;
-import ca.leaguemanagementsystem.model.leagues.events.assignments.Assignment;
+import ca.leaguemanagementsystem.model.leagues.events.assignments.GameAssignment;
 import ca.leaguemanagementsystem.model.notifications.GameNotification;
 import org.springframework.expression.spel.ast.Assign;
 
@@ -12,6 +12,8 @@ import java.util.List;
 @DiscriminatorValue("game")
 @Table(name = "game")
 public class Game extends EventType{
+
+    /* associations */
 
     @OneToOne
     @JoinColumn(name = "fk_playerStat")
@@ -36,15 +38,26 @@ public class Game extends EventType{
         this.gameNotifications = gameNotifications;
     }
 
-    @OneToMany(mappedBy = "game")
-    private List<Team> teams;
+    @OneToOne(mappedBy = "teamA")
+    private Team teamA;
 
-    public List <Team> getTeams(){
-        return teams;
+    public Team getTeamA() {
+        return teamA;
     }
 
-    public void setTeams(List<Team> teams){
-        this.teams = teams;
+    public void setTeamA(Team teamA) {
+        this.teamA = teamA;
+    }
+
+    @OneToOne(mappedBy = "teamB")
+    private Team teamB;
+
+    public Team getTeamB() {
+        return teamB;
+    }
+
+    public void setTeamB(Team teamB) {
+        this.teamB = teamB;
     }
 
     @OneToMany(
@@ -52,17 +65,18 @@ public class Game extends EventType{
             cascade = CascadeType.ALL,
             orphanRemoval = true
     )
-    private List<Assignment> assignments;
+    private List<GameAssignment> gameAssignments;
 
-    public List<Assignment> getAssignments() {
-        return assignments;
+    public List<GameAssignment> getGameAssignments() {
+        return gameAssignments;
     }
 
-    public void setAssignments(List<Assignment> assignments) {
-        this.assignments = assignments;
+    public void setGameAssignmentsAssignments(List<GameAssignment> gameAssignments) {
+        this.gameAssignments = gameAssignments;
     }
 
-    //attributes
+    /* attributes */
+
     private GameState gameState;
 
     public GameState getGameState() {
