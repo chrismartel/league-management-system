@@ -1,5 +1,7 @@
 package ca.leaguemanagementsystem.model.requests;
 
+import ca.leaguemanagementsystem.model.leagues.League;
+
 import javax.persistence.*;
 import java.sql.Time;
 import java.util.Date;
@@ -13,31 +15,23 @@ public class Request {
     /* associations */
 
     @ManyToOne
-    private LeagueType leagueType;
+    private League league;
 
-    public LeagueType getLeagueType() {
-        return leagueType;
+    public League getLeague() {
+        return league;
     }
 
-    public void setLeagueType(LeagueType leagueType) {
-        this.leagueType = leagueType;
+    public void setLeague(League league) {
+        this.league = league;
     }
 
-    @OneToMany(mappedBy = "request")
-    private List<LeagueRequest> leagueRequests;
-
-    public List<LeagueRequest> getLeagueRequests() {
-        return leagueRequests;
-    }
-
-    public void setLeagueRequests(List<LeagueRequest> leagueRequests) {
-        this.leagueRequests = leagueRequests;
-    }
 
     /* attributes */
+
     @Id
     @GeneratedValue
     private Long requestId;         // Id for databse
+
 
     @Temporal(TemporalType.DATE)
     private Date date;              // Date of the request
@@ -49,6 +43,7 @@ public class Request {
     public void setDate(Date date) {
         this.date = date;
     }
+
 
     @Temporal(TemporalType.TIME)
     private Time time;              // Time of the request

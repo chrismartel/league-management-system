@@ -8,30 +8,35 @@ import javax.persistence.*;
 @Table(name = "attendance")
 public class Attendance {
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    private EventType eventType;
+    /* associations */
 
-    public EventType getEventType() {
-        return eventType;
+    @ManyToOne
+    private Event event;    // attendance for which event
+
+    public Event getEvent() {
+        return event;
     }
 
-    public void setEventType(EventType eventType) {
-        this.eventType = eventType;
+    public void setEvent(Event event) {
+        this.event = event;
     }
+
 
     @ManyToOne(optional = false)
-    private Player player;
+    private Player player;  // attendance for which player
 
     public Player getPlayer(){
         return this.player;
     }
 
-    public void setPlayer(){
+    public void setPlayer(Player player) {
         this.player = player;
     }
 
-    //attributes
-    private boolean isAttending;
+
+    /* attributes */
+
+    private boolean isAttending;    // is the player attending the game or not
 
     public boolean isAttending() {
         return isAttending;

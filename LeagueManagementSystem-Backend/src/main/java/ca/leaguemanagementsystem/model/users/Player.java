@@ -1,6 +1,7 @@
 package ca.leaguemanagementsystem.model.users;
 
 import ca.leaguemanagementsystem.model.leagues.Award;
+import ca.leaguemanagementsystem.model.leagues.PlayerTeamAssignment;
 
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
@@ -28,13 +29,13 @@ public class Player extends UserRole{
 
 
     @OneToMany(mappedBy = "player")
-    private List<TeamAssignment> assignedTeams; // teams assigned
+    private List<PlayerTeamAssignment> assignedTeams; // teams assigned
 
-    public List<TeamAssignment> getAssignedTeams() {
+    public List<PlayerTeamAssignment> getAssignedTeams() {
         return assignedTeams;
     }
 
-    public void setAssignedTeams(List<TeamAssignment> assignedTeams) {
+    public void setAssignedTeams(List<PlayerTeamAssignment> assignedTeams) {
         this.assignedTeams = assignedTeams;
     }
 

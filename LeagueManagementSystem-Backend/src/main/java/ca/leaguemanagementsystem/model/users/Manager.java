@@ -1,5 +1,7 @@
 package ca.leaguemanagementsystem.model.users;
 
+import ca.leaguemanagementsystem.model.leagues.League;
+
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
@@ -14,13 +16,13 @@ public class Manager extends UserRole{
     /* associations */
 
     @OneToMany(mappedBy = "manager")
-    private List<LeagueType> managedLeagues;
+    private List<League> managedLeagues;
 
-    public List<LeagueType> getManagedLeagues() {
+    public List<League> getManagedLeagues() {
         return managedLeagues;
     }
 
-    public void setManagedLeagues(List<LeagueType> managedLeagues) {
+    public void setManagedLeagues(List<League> managedLeagues) {
         this.managedLeagues = managedLeagues;
     }
 }

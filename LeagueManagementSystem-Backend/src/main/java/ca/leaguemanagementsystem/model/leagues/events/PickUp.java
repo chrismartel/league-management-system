@@ -7,6 +7,6 @@ import javax.persistence.Table;
 @Entity
 @DiscriminatorValue("pckp")
 @Table (name = "pickUp")
-public class PickUp extends EventType{
+public class PickUp extends Event{
 
 }
