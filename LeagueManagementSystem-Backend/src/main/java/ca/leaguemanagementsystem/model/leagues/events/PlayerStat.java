@@ -10,7 +10,6 @@ public class PlayerStat {
 
     //unidirectional many to one association with player
     @ManyToOne(optional = false)
-    @JoinColumn(name = "fk_player")
     private Player player;
 
     public Player getPlayer(){
@@ -22,7 +21,7 @@ public class PlayerStat {
     }
 
     //bidirectional one to one association with game
-    @OneToOne(mappedBy = "playerStat")
+    @ManyToOne
     private Game game;
 
     public Game getGame(){

@@ -12,7 +12,7 @@ import java.util.Date;
 
 @Entity
 @Table(name = "teamAssignment")
-public class TeamAssignment {
+public class PlayerTeamAssignment {
 
 
     /* associations */

@@ -15,8 +15,11 @@ public class Game extends EventType{
 
     /* associations */
 
-    @OneToOne
-    @JoinColumn(name = "fk_playerStat")
+    @OneToMany(
+            mappedBy = "game",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true
+    )
     private PlayerStat playerStat;
 
     public PlayerStat getPlayerStat() {
@@ -38,7 +41,7 @@ public class Game extends EventType{
         this.gameNotifications = gameNotifications;
     }
 
-    @OneToOne(mappedBy = "teamA")
+    @ManyToOne
     private Team teamA;
 
     public Team getTeamA() {
@@ -49,7 +52,7 @@ public class Game extends EventType{
         this.teamA = teamA;
     }
 
-    @OneToOne(mappedBy = "teamB")
+    @ManyToOne
     private Team teamB;
 
     public Team getTeamB() {
