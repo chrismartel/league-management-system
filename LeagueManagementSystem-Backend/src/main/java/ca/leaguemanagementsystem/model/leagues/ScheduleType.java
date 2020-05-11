@@ -1,7 +1,10 @@
 package ca.leaguemanagementsystem.model.leagues;
 
+import ca.leaguemanagementsystem.model.leagues.events.EventType;
+
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Inheritance(strategy = InheritanceType.JOINED)
 @Entity
@@ -20,7 +23,35 @@ public class ScheduleType {
         this.leagueType = leagueType;
     }
 
-    @
+    @OneToMany(
+            mappedBy = "scheduleTypeOfEvent",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true
+    )
+    private List<EventType> eventTypes;
+
+    public List<EventType> getEventTypes() {
+        return eventTypes;
+    }
+
+    public void setEventTypes(List<EventType> eventTypes) {
+        this.eventTypes = eventTypes;
+    }
+
+    @OneToMany(
+            mappedBy = "scheduleTypeOfRegistration",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true
+    )
+    private List<Registration> registrations;
+
+    public List<Registration> getRegistrations() {
+        return registrations;
+    }
+
+    public void setRegistrations(List<Registration> registrations) {
+        this.registrations = registrations;
+    }
 
     /* attributes */
     @Id
