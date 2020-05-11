@@ -2,24 +2,24 @@ package ca.leaguemanagementsystem.model.leagues;
 
 import ca.leaguemanagementsystem.model.leagues.events.EventType;
 
-import javax.persistence.Entity;
-import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.List;
 import java.util.Set;
 
 @Entity
 @Table(name = "location")
 public class Location {
-    @ManyToMany(mappedBy = "locations")
-    private Set<LeagueType> leagueType;
 
-    public Set<LeagueType> getLeagueType() {
+    /* associations */
+
+    @ManyToOne
+    private LeagueType leagueType;
+
+    public LeagueType getLeagueType() {
         return leagueType;
     }
 
-    public void setLeagueType(Set<LeagueType> leagueType) {
+    public void setLeagueType(LeagueType leagueType) {
         this.leagueType = leagueType;
     }
 
@@ -34,8 +34,10 @@ public class Location {
         this.eventType = eventType;
     }
 
-    //attributes
-    private String LocationName;
+    /* attributes */
+
+    @Id
+    private String LocationName;            //Id for database
 
     public String getLocationName() {
         return LocationName;

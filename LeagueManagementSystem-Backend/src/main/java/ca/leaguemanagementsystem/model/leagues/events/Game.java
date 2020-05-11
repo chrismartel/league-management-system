@@ -76,7 +76,7 @@ public class Game extends EventType{
     }
 
     /* attributes */
-    
+
     private GameState gameState;
 
     public GameState getGameState() {
