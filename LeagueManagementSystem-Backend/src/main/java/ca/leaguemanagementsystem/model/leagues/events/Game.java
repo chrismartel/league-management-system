@@ -9,7 +9,7 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@DiscriminatorValue("gm")
+@DiscriminatorValue("game")
 @Table(name = "game")
 public class Game extends EventType{
 

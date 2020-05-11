@@ -43,4 +43,6 @@ public class Season extends ScheduleType{
     public void setPrice(Integer price) {
         this.price = price;
     }
+
+    private boolean isActive;   // is the season currently active
 }

@@ -7,10 +7,12 @@ import javax.persistence.*;
 
 @Inheritance(strategy = InheritanceType.JOINED)
 @Entity
-@DiscriminatorColumn(name = "assignment")
+@DiscriminatorColumn(name = "game_assignment_type")
 public class GameAssignment {
+
+    /* associations */
     @ManyToOne
-    private Game game;
+    private Game game;  // assignment to which game
 
     public Game getGame() {
         return game;
@@ -20,9 +22,10 @@ public class GameAssignment {
         this.game = game;
     }
 
-    //attributes
 
-    private boolean isAccepted;
+    /* attributes */
+
+    private boolean isAccepted; // status of the assignment: was is accepted or not
 
     public boolean isAccepted() {
         return isAccepted;

@@ -12,6 +12,9 @@ import java.util.List;
 @DiscriminatorValue("mng")
 @Table(name = "manager")
 public class Manager extends UserRole{
+    
+    /* associations */
+
     @OneToMany(mappedBy = "manager")
     private List<LeagueType> managedLeagues;
 

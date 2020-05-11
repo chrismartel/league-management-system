@@ -150,25 +150,4 @@ public class User {
         this.allowNotifications = allowNotifications;
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }

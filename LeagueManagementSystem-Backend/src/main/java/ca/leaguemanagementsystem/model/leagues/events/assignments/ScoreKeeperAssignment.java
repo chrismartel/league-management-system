@@ -9,12 +9,13 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@DiscriminatorValue("ska")
+@DiscriminatorValue("sk_assign")
 @Table(name = "scoreKeeperAssignment")
 public class ScoreKeeperAssignment {
 
+    /* associations */
     @ManyToOne
-    private ScoreKeeper scoreKeeper;
+    private ScoreKeeper scoreKeeper;    // score keeper assigned
 
     public ScoreKeeper getScoreKeeper() {
         return scoreKeeper;

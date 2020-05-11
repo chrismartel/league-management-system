@@ -6,28 +6,18 @@ import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import java.util.Date;
 import java.util.List;
 
 @Entity
 @DiscriminatorValue("sk")
 @Table(name = "scoreKeeper")
-public class ScoreKeeper extends UserRole{
+public class ScoreKeeper extends UserRole {
 
     /* associations */
+
     @OneToMany(mappedBy = "scoreKeeper")
     private List<ScoreKeeperAssignment> scoreKeeperAssignments;
-
-    private int nbYearsExperience;
-
-
-
-    public int getNbYearsExperience() {
-        return nbYearsExperience;
-    }
-
-    public void setNbYearsExperience(int nbYearsExperience) {
-        this.nbYearsExperience = nbYearsExperience;
-    }
 
     public List<ScoreKeeperAssignment> getScoreKeeperAssignments() {
         return scoreKeeperAssignments;
@@ -35,5 +25,17 @@ public class ScoreKeeper extends UserRole{
 
     public void setScoreKeeperAssignments(List<ScoreKeeperAssignment> scoreKeeperAssignments) {
         this.scoreKeeperAssignments = scoreKeeperAssignments;
+    }
+
+    /* attributes */
+
+    private int nbYearsExperience;
+
+    public int getNbYearsExperience() {
+        return nbYearsExperience;
+    }
+
+    public void setNbYearsExperience(int nbYearsExperience) {
+        this.nbYearsExperience = nbYearsExperience;
     }
 }

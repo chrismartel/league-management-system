@@ -11,19 +11,12 @@ import java.util.List;
 @Entity
 @DiscriminatorValue("ref")
 @Table(name = "referee")
-public class Referee extends UserRole{
-    private int nbYearsExperience;
+public class Referee extends UserRole {
+
+    /* associations */
 
     @OneToMany(mappedBy = "referee")
     private List<RefereeAssignment> refereeAssignments;
-
-    public int getNbYearsExperience() {
-        return nbYearsExperience;
-    }
-
-    public void setNbYearsExperience(int nbYearsExperience) {
-        this.nbYearsExperience = nbYearsExperience;
-    }
 
     public List<RefereeAssignment> getRefereeAssignments() {
         return refereeAssignments;
@@ -31,5 +24,17 @@ public class Referee extends UserRole{
 
     public void setRefereeAssignments(List<RefereeAssignment> refereeAssignments) {
         this.refereeAssignments = refereeAssignments;
+    }
+
+    /* attributes */
+
+    private int nbYearsExperience;
+
+    public int getNbYearsExperience() {
+        return nbYearsExperience;
+    }
+
+    public void setNbYearsExperience(int nbYearsExperience) {
+        this.nbYearsExperience = nbYearsExperience;
     }
 }

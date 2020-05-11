@@ -8,12 +8,13 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@DiscriminatorValue("rfa")
+@DiscriminatorValue("ref_assign")
 @Table(name = "refereeAssignment")
 public class RefereeAssignment {
 
+    /* associations */
     @ManyToOne
-    private Referee referee;
+    private Referee referee;    // referee assigned
 
     public Referee getReferee() {
         return referee;
