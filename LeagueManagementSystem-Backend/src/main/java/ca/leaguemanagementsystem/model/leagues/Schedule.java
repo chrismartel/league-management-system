@@ -1,6 +1,6 @@
 package ca.leaguemanagementsystem.model.leagues;
 
-import ca.leaguemanagementsystem.model.leagues.events.EventType;
+import ca.leaguemanagementsystem.model.leagues.events.Event;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -9,37 +9,40 @@ import java.util.List;
 @Inheritance(strategy = InheritanceType.JOINED)
 @Entity
 @DiscriminatorColumn(name = "schedule_type")
-public class ScheduleType {
+public class Schedule {
 
     /* associations */
+
     @ManyToOne
-    private LeagueType leagueType;
+    private League league;
 
-    public LeagueType getLeagueType() {
-        return leagueType;
+    public League getLeague() {
+        return league;
     }
 
-    public void setLeagueType(LeagueType leagueType) {
-        this.leagueType = leagueType;
+    public void setLeague(League league) {
+        this.league = league;
     }
+
 
     @OneToMany(
-            mappedBy = "scheduleTypeOfEvent",
+            mappedBy = "schedule",
             cascade = CascadeType.ALL,
             orphanRemoval = true
     )
-    private List<EventType> eventTypes;
+    private List<Event> events;
 
-    public List<EventType> getEventTypes() {
-        return eventTypes;
+    public List<Event> getEvents() {
+        return events;
     }
 
-    public void setEventTypes(List<EventType> eventTypes) {
-        this.eventTypes = eventTypes;
+    public void setEvents(List<Event> events) {
+        this.events = events;
     }
+
 
     @OneToMany(
-            mappedBy = "scheduleTypeOfRegistration",
+            mappedBy = "schedule",
             cascade = CascadeType.ALL,
             orphanRemoval = true
     )
@@ -53,7 +56,9 @@ public class ScheduleType {
         this.registrations = registrations;
     }
 
+
     /* attributes */
+
     @Id
     private String scheduleName;            // id for database
 
@@ -65,6 +70,7 @@ public class ScheduleType {
         this.scheduleName = scheduleName;
     }
 
+
     @Temporal(TemporalType.DATE)
     private Date startDate;                 // Start date of schedule
 
@@ -75,6 +81,7 @@ public class ScheduleType {
     public void setStartDate(Date startDate) {
         this.startDate = startDate;
     }
+
 
     @Temporal(TemporalType.DATE)
     private Date endDate;                   // End date of schedule

@@ -1,7 +1,6 @@
 package ca.leaguemanagementsystem.model.leagues.events;
 
 import ca.leaguemanagementsystem.model.leagues.Location;
-import ca.leaguemanagementsystem.model.leagues.ScheduleType;
 
 import javax.persistence.*;
 import java.sql.Date;
@@ -11,35 +10,37 @@ import java.util.List;
 @Inheritance(strategy = InheritanceType.JOINED)
 @Entity
 @DiscriminatorColumn(name = "event_type")
-public class EventType {
+public class Event {
 
-    /* Associations */
+    /* associations */
 
     @OneToMany(
-            mappedBy = "eventType",
+            mappedBy = "event",
             cascade = CascadeType.ALL,
             orphanRemoval = true
     )
-    private List<EventType> eventTypes;
+    private List<Attendance> attendances;   // attendances to the event
 
-    public List<EventType> getEventTypes() {
-        return eventTypes;
+    public List<Attendance> getAttendances() {
+        return attendances;
     }
 
-    public void setEventTypes(List<EventType> eventTypes) {
-        this.eventTypes = eventTypes;
+    public void setAttendances(List<Attendance> attendances) {
+        this.attendances = attendances;
     }
+
 
     @ManyToOne
-    private Location locations;
+    private Location location;  // event location
 
-    public Location getLocations() {
-        return locations;
+    public Location getLocation() {
+        return location;
     }
 
-    public void setLocations(Location value) {
-        this.locations = value;
+    public void setLocation(Location location) {
+        this.location = location;
     }
+
 
     @ManyToOne
     private ScheduleType scheduleType;

@@ -1,7 +1,5 @@
 package ca.leaguemanagementsystem.model.users;
 
-import ca.leaguemanagementsystem.model.leagues.LeagueType;
-
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;

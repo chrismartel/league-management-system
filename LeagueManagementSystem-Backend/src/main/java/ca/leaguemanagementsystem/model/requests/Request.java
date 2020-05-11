@@ -1,7 +1,5 @@
 package ca.leaguemanagementsystem.model.requests;
 
-import ca.leaguemanagementsystem.model.leagues.LeagueType;
-
 import javax.persistence.*;
 import java.sql.Time;
 import java.util.Date;

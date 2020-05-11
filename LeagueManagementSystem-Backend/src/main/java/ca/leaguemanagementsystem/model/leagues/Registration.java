@@ -1,8 +1,5 @@
 package ca.leaguemanagementsystem.model.leagues;
 
-import ca.leaguemanagementsystem.model.leagues.Membership;
-import ca.leaguemanagementsystem.model.leagues.ScheduleType;
-
 import javax.persistence.*;
 import java.util.Date;
 

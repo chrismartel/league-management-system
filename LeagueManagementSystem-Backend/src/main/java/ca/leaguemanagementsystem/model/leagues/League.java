@@ -7,7 +7,7 @@ import java.util.List;
 @Inheritance(strategy = InheritanceType.JOINED)
 @Entity
 @DiscriminatorColumn(name = "league_type")
-public class LeagueType {
+public class League {
 
     /* associations */
 
