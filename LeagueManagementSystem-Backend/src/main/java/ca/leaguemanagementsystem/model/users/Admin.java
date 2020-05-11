@@ -12,8 +12,9 @@ import java.util.List;
 public class Admin {
 
     /* associations */
+
     @OneToMany(mappedBy = "admin")
-    private List<ManagerRequest> managerRequests;
+    private List<ManagerRequest> managerRequests;   // manager requests from user
 
     public List<ManagerRequest> getManagerRequests() {
         return managerRequests;
@@ -22,6 +23,7 @@ public class Admin {
     public void setManagerRequests(List<ManagerRequest> managerRequests) {
         this.managerRequests = managerRequests;
     }
+
 
     /* attributes */
     private String password;            // password of the administrator
@@ -34,6 +36,7 @@ public class Admin {
         this.password = password;
     }
 
+
     private String phoneNumber;         // phone Number of the administrator
 
     public String getPhoneNumber() {
@@ -44,6 +47,18 @@ public class Admin {
         this.phoneNumber = phoneNumber;
     }
 
+
+    private String email;         // email of the administrator
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+
     private String adminToken;          // administrator authentification token
 
     public String getAdminToken() {
@@ -53,6 +68,7 @@ public class Admin {
     public void setAdminToken(String adminToken) {
         this.adminToken = adminToken;
     }
+
 
     private boolean isLogged;           // if the administrator is logged on
 

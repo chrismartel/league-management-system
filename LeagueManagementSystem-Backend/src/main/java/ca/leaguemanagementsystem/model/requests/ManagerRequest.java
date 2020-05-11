@@ -13,7 +13,7 @@ public class ManagerRequest extends Request{
     /* associations */
 
     @ManyToOne
-    private Admin admin;
+    private Admin admin;    // manager request sent to the admin
 
     public Admin getAdmin() {
         return admin;
@@ -22,17 +22,4 @@ public class ManagerRequest extends Request{
     public void setAdmin(Admin admin) {
         this.admin = admin;
     }
-
-    @OneToOne
-    private User user;
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
-
-
 }

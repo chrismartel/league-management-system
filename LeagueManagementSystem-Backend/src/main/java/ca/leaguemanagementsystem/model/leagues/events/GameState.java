@@ -2,6 +2,6 @@ package ca.leaguemanagementsystem.model.leagues.events;
 
 public enum GameState {
 
-    SCHEDULED, POSTPONED, FINISHED, CANCELED;
+    PENDING, POSTPONED, FINISHED, CANCELED;
 
 }
