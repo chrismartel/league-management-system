@@ -10,35 +10,21 @@ import java.util.List;
 @Table(name = "team")
 public class Team {
 
-    @Id
-    @GeneratedValue
-    private int teamId;
+    /* associations */
 
-    private String teamName;        // team name
-    private String imageURL;    // have to figure out how to add images
-    private int teamNumber;     // number of the team in the league
-    private int wins;           // # of wins in the season
-    private int losses;         // # of losses in the season
-    private int ties;           // # of ties in the season
-    private int pointsAgainst;  // cumulative of points accorded during the season
-    private int pointsFor;      // cumulative of points made during the season
+    @OneToMany(mappedBy = "team")
+    private List<PlayerTeamAssignment> playerTeamAssignments;
 
-
-
-
-    @OneToMany(mappedBy = "myTeams")
-    private List<TeamAssignment> teamAssignments;
-
-    public List<TeamAssignment> getTeamAssignments() {
-        return teamAssignments;
+    public List<PlayerTeamAssignment> getPlayerTeamAssignments() {
+        return playerTeamAssignments;
     }
 
-    public void setTeamAssignments(List<TeamAssignment> teamAssignments) {
-        this.teamAssignments = teamAssignments;
+    public void setPlayerTeamAssignments(List<PlayerTeamAssignment> playerTeamAssignments) {
+        this.playerTeamAssignments = playerTeamAssignments;
     }
 
     @ManyToOne
-    private Season season;
+    private Season season;  // season in which the team plays, season is the parent
 
     public Season getSeason() {
         return season;
@@ -48,18 +34,36 @@ public class Team {
         this.season = season;
     }
 
-    @ManyToOne
-    private Game game;
 
-    public Game getGame() {
-        return game;
+    @OneToMany(mappedBy = "team")
+    private List<GameTeamAssignment> gameTeamAssignments;   // games assignments of the team
+
+    public List<GameTeamAssignment> getGameTeamAssignments() {
+        return gameTeamAssignments;
     }
 
-    public void setGame(Game game) {
-        this.game = game;
+    public void setGameTeamAssignments(List<GameTeamAssignment> gameTeamAssignments) {
+        this.gameTeamAssignments = gameTeamAssignments;
     }
 
-    //attributes
+
+    /* attributes */
+
+    @Id
+    @GeneratedValue
+    private int teamId; // Id for database
+
+    public int getTeamId() {
+        return teamId;
+    }
+
+    public void setTeamId(int teamId) {
+        this.teamId = teamId;
+    }
+
+
+    private String teamName;    // name of the team
+
     public String getTeamName() {
         return teamName;
     }
@@ -67,6 +71,9 @@ public class Team {
     public void setTeamName(String teamName) {
         this.teamName = teamName;
     }
+
+
+    private String imageURL;    // have to figure out how to add images
 
     public String getImageURL() {
         return imageURL;
@@ -76,51 +83,69 @@ public class Team {
         this.imageURL = imageURL;
     }
 
-    public Integer getTeamNumber() {
+
+    private int teamNumber;     // number of the team in the league
+
+    public int getTeamNumber() {
         return teamNumber;
     }
 
-    public void setTeamNumber(Integer teamNumber) {
+    public void setTeamNumber(int teamNumber) {
         this.teamNumber = teamNumber;
     }
 
-    public Integer getWins() {
+
+    private int wins;           // # of wins in the season
+
+    public int getWins() {
         return wins;
     }
 
-    public void setWins(Integer wins) {
+    public void setWins(int wins) {
         this.wins = wins;
     }
 
-    public Integer getLosses() {
+
+    private int losses;         // # of losses in the season
+
+    public int getLosses() {
         return losses;
     }
 
-    public void setLosses(Integer losses) {
+    public void setLosses(int losses) {
         this.losses = losses;
     }
 
-    public Integer getTies() {
+
+    private int ties;           // # of ties in the season
+
+    public int getTies() {
         return ties;
     }
 
-    public void setTies(Integer ties) {
+    public void setTies(int ties) {
         this.ties = ties;
     }
 
-    public Integer getPointsAgainst() {
+
+    private int pointsAgainst;  // cumulative of points accorded during the season
+
+    public int getPointsAgainst() {
         return pointsAgainst;
     }
 
-    public void setPointsAgainst(Integer pointsAgainst) {
+    public void setPointsAgainst(int pointsAgainst) {
         this.pointsAgainst = pointsAgainst;
     }
 
-    public Integer getPointsFor() {
+
+    private int pointsFor;      // cumulative of points made during the season
+
+    public int getPointsFor() {
         return pointsFor;
     }
 
-    public void setPointsFor(Integer pointsFor) {
+    public void setPointsFor(int pointsFor) {
         this.pointsFor = pointsFor;
     }
 }

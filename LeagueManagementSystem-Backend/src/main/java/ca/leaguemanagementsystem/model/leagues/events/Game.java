@@ -1,5 +1,6 @@
 package ca.leaguemanagementsystem.model.leagues.events;
 
+import ca.leaguemanagementsystem.model.leagues.GameTeamAssignment;
 import ca.leaguemanagementsystem.model.leagues.Team;
 import ca.leaguemanagementsystem.model.leagues.events.assignments.GameAssignment;
 import ca.leaguemanagementsystem.model.notifications.GameNotification;
@@ -12,6 +13,7 @@ import java.util.List;
 @DiscriminatorValue("game")
 @Table(name = "game")
 public class Game extends EventType{
+
 
     /* associations */
 
@@ -30,6 +32,7 @@ public class Game extends EventType{
         this.playerStat = playerStat;
     }
 
+
     @OneToMany(mappedBy = "game")
     private List<GameNotification> gameNotifications;
 
@@ -41,27 +44,18 @@ public class Game extends EventType{
         this.gameNotifications = gameNotifications;
     }
 
-    @ManyToOne
-    private Team teamA;
 
-    public Team getTeamA() {
-        return teamA;
+    @OneToMany(mappedBy = "game")
+    private List<GameTeamAssignment> gameTeamAssignments;
+
+    public List<GameTeamAssignment> getGameTeamAssignments() {
+        return gameTeamAssignments;
     }
 
-    public void setTeamA(Team teamA) {
-        this.teamA = teamA;
+    public void setGameTeamAssignments(List<GameTeamAssignment> gameTeamAssignments) {
+        this.gameTeamAssignments = gameTeamAssignments;
     }
 
-    @ManyToOne
-    private Team teamB;
-
-    public Team getTeamB() {
-        return teamB;
-    }
-
-    public void setTeamB(Team teamB) {
-        this.teamB = teamB;
-    }
 
     @OneToMany(
             mappedBy = "gameAssignments",
@@ -74,9 +68,10 @@ public class Game extends EventType{
         return gameAssignments;
     }
 
-    public void setGameAssignmentsAssignments(List<GameAssignment> gameAssignments) {
+    public void setGameAssignments(List<GameAssignment> gameAssignments) {
         this.gameAssignments = gameAssignments;
     }
+
 
     /* attributes */
 
