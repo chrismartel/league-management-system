@@ -6,19 +6,24 @@ import java.util.List;
 @Entity
 @Table(name = "ruleBook")
 public class RuleBook {
-    @OneToOne(mappedBy = "ruleBook")
-    private CompetitiveLeague competitiveLeague;
 
-    public CompetitiveLeague getCompetitiveLeague() {
-        return competitiveLeague;
+    /* associations */
+
+    @OneToOne(
+            mappedBy = "ruleBook",
+            optional = false)
+    private League league;
+
+    public League getLeague() {
+        return league;
     }
 
-    public void setCompetitiveLeague(CompetitiveLeague competitiveLeague) {
-        this.competitiveLeague = competitiveLeague;
+    public void setLeague(League league) {
+        this.league = league;
     }
 
     @OneToMany(
-            mappedBy = "ruling",
+            mappedBy = "ruleBook",
             cascade = CascadeType.ALL,
             orphanRemoval = true
     )

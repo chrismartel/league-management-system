@@ -10,12 +10,27 @@ import javax.persistence.Table;
 @Table(name = "pickUpLeague")
 public class PickUpLeague extends League{
 
-    private String scheduleName;
-    //attributes
-    private Integer minNbPlayers;
-    private Integer maxNbPlayers;
-    private Schedule schedule;
+    /* attributes */
+
+    private Integer minNbPlayers;   // min number of players in a pickup event
+
+    public Integer getMinNbPlayers() {
+        return minNbPlayers;
+    }
+
+    public void setMinNbPlayers(Integer minNbPlayers) {
+        this.minNbPlayers = minNbPlayers;
+    }
 
 
+    private Integer maxNbPlayers;   // max number of player in a pickup event
+
+    public Integer getMaxNbPlayers() {
+        return maxNbPlayers;
+    }
+
+    public void setMaxNbPlayers(Integer maxNbPlayers) {
+        this.maxNbPlayers = maxNbPlayers;
+    }
 }
 

@@ -48,7 +48,7 @@ public class League {
             cascade = CascadeType.ALL,
             orphanRemoval = true
     )
-    private List<Schedule> schedules;   // schedules history of league
+    private List<Schedule> schedules;   // seasons history of the league
 
     public List<Schedule> getSchedules() {
         return schedules;
@@ -73,10 +73,25 @@ public class League {
     }
 
 
+    @OneToOne(
+            mappedBy = "league",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true
+    )
+    private RuleBook ruleBook;
+
+    public RuleBook getRuleBook() {
+        return ruleBook;
+    }
+
+    public void setRuleBook(RuleBook ruleBook) {
+        this.ruleBook = ruleBook;
+    }
+
+
     /* attributes */
 
     @Id
-    @GeneratedValue
     private String leagueName;          // Id for database
 
     public String getLeagueName() {
@@ -85,27 +100,5 @@ public class League {
 
     public void setLeagueName(String leagueName) {
         this.leagueName = leagueName;
-    }
-
-    @Temporal(TemporalType.DATE)
-    private Date startDate;             // Start date of the league
-
-    public Date getStartDate() {
-        return startDate;
-    }
-
-    public void setStartDate(Date startDate) {
-        this.startDate = startDate;
-    }
-
-    @Temporal(TemporalType.DATE)
-    private Date endDate;               // End date of the league
-
-    public Date getEndDate() {
-        return endDate;
-    }
-
-    public void setEndDate(Date endDate) {
-        this.endDate = endDate;
     }
 }

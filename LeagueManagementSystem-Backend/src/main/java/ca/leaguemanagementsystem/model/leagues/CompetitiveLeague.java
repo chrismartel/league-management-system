@@ -7,44 +7,9 @@ import javax.persistence.*;
 @Table(name = "competitiveLeague")
 public class CompetitiveLeague extends League{
 
-    private Integer minNbTeams;
-    private Integer maxNbTeams;
-    private Integer minNbPlayersPerTeam;
-    private Integer maxNbPlayersPerTeam;
-    private Integer gameLength;
-    private Integer shotClockLength;
-    private Integer nbScoreKeepersPerGame;
-    private Integer nbRefereesPerGame;
-    private Integer nbTeamsPlayoffs;
+    /* attributes */
 
-    private boolean recordsPoints;
-    private boolean recordsAssists;
-    private boolean recordsRebounds;
-    private boolean recordsBlocks;
-    private boolean recordsSteals;
-    private boolean recordsTurnovers;
-    private boolean recordsFouls;
-    private boolean recordsThreePointers;
-    private boolean recordsFreeThrows;
-    private boolean recordsFreeThrowPercentage;
-    private boolean hasRatings;
-
-    @OneToOne(
-            mappedBy = "competitiveLeague",
-            cascade = CascadeType.ALL,
-            orphanRemoval = true
-    )
-    private RuleBook ruleBook;
-
-    public RuleBook getRuleBook() {
-        return ruleBook;
-    }
-
-    public void setRuleBook(RuleBook ruleBook) {
-        this.ruleBook = ruleBook;
-    }
-
-    //attributes
+    private Integer minNbTeams; // minimum number of teams in the league
 
     public Integer getMinNbTeams(){
         return minNbTeams;
@@ -54,6 +19,9 @@ public class CompetitiveLeague extends League{
         this.minNbTeams = minNbTeams;
     }
 
+
+    private Integer maxNbTeams; // maximum number of teams in the league
+
     public Integer getMaxNbTeams() {
         return maxNbTeams;
     }
@@ -61,6 +29,9 @@ public class CompetitiveLeague extends League{
     public void setMaxNbTeams(Integer maxNbTeams) {
         this.maxNbTeams = maxNbTeams;
     }
+
+
+    private Integer minNbPlayersPerTeam;    // minimum number of players per team
 
     public Integer getMinNbPlayersPerTeam() {
         return minNbPlayersPerTeam;
@@ -70,6 +41,9 @@ public class CompetitiveLeague extends League{
         this.minNbPlayersPerTeam = minNbPlayersPerTeam;
     }
 
+
+    private Integer maxNbPlayersPerTeam;    // maximum number of players per team
+
     public Integer getMaxNbPlayersPerTeam() {
         return maxNbPlayersPerTeam;
     }
@@ -77,6 +51,9 @@ public class CompetitiveLeague extends League{
     public void setMaxNbPlayersPerTeam(Integer maxNbPlayersPerTeam) {
         this.maxNbPlayersPerTeam = maxNbPlayersPerTeam;
     }
+
+
+    private Integer gameLength; // game lengths
 
     public Integer getGameLength() {
         return gameLength;
@@ -86,6 +63,9 @@ public class CompetitiveLeague extends League{
         this.gameLength = gameLength;
     }
 
+
+    private Integer shotClockLength;    // shot clock length
+
     public Integer getShotClockLength() {
         return shotClockLength;
     }
@@ -93,6 +73,9 @@ public class CompetitiveLeague extends League{
     public void setShotClockLength(Integer shotClockLength) {
         this.shotClockLength = shotClockLength;
     }
+
+
+    private Integer nbScoreKeepersPerGame;  // number of scorekeepers required per game
 
     public Integer getNbScoreKeepersPerGame() {
         return nbScoreKeepersPerGame;
@@ -102,6 +85,9 @@ public class CompetitiveLeague extends League{
         this.nbScoreKeepersPerGame = nbScoreKeepersPerGame;
     }
 
+
+    private Integer nbRefereesPerGame;  // number of referees required per game
+
     public Integer getNbRefereesPerGame() {
         return nbRefereesPerGame;
     }
@@ -109,6 +95,9 @@ public class CompetitiveLeague extends League{
     public void setNbRefereesPerGame(Integer nbRefereesPerGame) {
         this.nbRefereesPerGame = nbRefereesPerGame;
     }
+
+
+    private Integer nbTeamsPlayoffs;    // number of teams eligible for playoffs
 
     public Integer getNbTeamsPlayoffs() {
         return nbTeamsPlayoffs;
@@ -118,6 +107,9 @@ public class CompetitiveLeague extends League{
         this.nbTeamsPlayoffs = nbTeamsPlayoffs;
     }
 
+
+    private boolean recordsPoints;  // does the league records points
+
     public boolean isRecordsPoints() {
         return recordsPoints;
     }
@@ -125,6 +117,9 @@ public class CompetitiveLeague extends League{
     public void setRecordsPoints(boolean recordsPoints) {
         this.recordsPoints = recordsPoints;
     }
+
+
+    private boolean recordsAssists;  // does the league records assists
 
     public boolean isRecordsAssists() {
         return recordsAssists;
@@ -134,6 +129,9 @@ public class CompetitiveLeague extends League{
         this.recordsAssists = recordsAssists;
     }
 
+
+    private boolean recordsRebounds;  // does the league records rebounds
+
     public boolean isRecordsRebounds() {
         return recordsRebounds;
     }
@@ -141,6 +139,9 @@ public class CompetitiveLeague extends League{
     public void setRecordsRebounds(boolean recordsRebounds) {
         this.recordsRebounds = recordsRebounds;
     }
+
+
+    private boolean recordsBlocks;  // does the league records blocks
 
     public boolean isRecordsBlocks() {
         return recordsBlocks;
@@ -150,6 +151,9 @@ public class CompetitiveLeague extends League{
         this.recordsBlocks = recordsBlocks;
     }
 
+
+    private boolean recordsSteals;  // does the league records steals
+
     public boolean isRecordsSteals() {
         return recordsSteals;
     }
@@ -157,6 +161,9 @@ public class CompetitiveLeague extends League{
     public void setRecordsSteals(boolean recordsSteals) {
         this.recordsSteals = recordsSteals;
     }
+
+
+    private boolean recordsTurnovers;  // does the league records turnovers
 
     public boolean isRecordsTurnovers() {
         return recordsTurnovers;
@@ -166,13 +173,30 @@ public class CompetitiveLeague extends League{
         this.recordsTurnovers = recordsTurnovers;
     }
 
-    public void setRecordsFouls(boolean recordsFouls) {
-        this.recordsFouls = recordsFouls;
-    }
+
+    private boolean recordsFouls;  // does the league records fouls
 
     public boolean isRecordsFouls() {
         return recordsFouls;
     }
+
+    public void setRecordsFouls(boolean recordsFouls) {
+        this.recordsFouls = recordsFouls;
+    }
+
+
+    private boolean recordsTechFouls;  // does the league records technical fouls
+
+    public boolean isRecordsTechFouls() {
+        return recordsTechFouls;
+    }
+
+    public void setRecordsTechFouls(boolean recordsTechFouls) {
+        this.recordsTechFouls = recordsTechFouls;
+    }
+
+
+    private boolean recordsThreePointers;  // does the league records # of 3 pointers made
 
     public boolean isRecordsThreePointers() {
         return recordsThreePointers;
@@ -182,6 +206,9 @@ public class CompetitiveLeague extends League{
         this.recordsThreePointers = recordsThreePointers;
     }
 
+
+    private boolean recordsFreeThrows;  // does the league records free throws made
+
     public boolean isRecordsFreeThrows() {
         return recordsFreeThrows;
     }
@@ -190,19 +217,14 @@ public class CompetitiveLeague extends League{
         this.recordsFreeThrows = recordsFreeThrows;
     }
 
+
+    private boolean recordsFreeThrowPercentage;  // does the league records free throw %
+
     public boolean isRecordsFreeThrowPercentage() {
         return recordsFreeThrowPercentage;
     }
 
     public void setRecordsFreeThrowPercentage(boolean recordsFreeThrowPercentage) {
         this.recordsFreeThrowPercentage = recordsFreeThrowPercentage;
-    }
-
-    public boolean isHasRatings() {
-        return hasRatings;
-    }
-
-    public void setHasRatings(boolean hasRatings) {
-        this.hasRatings = hasRatings;
     }
 }

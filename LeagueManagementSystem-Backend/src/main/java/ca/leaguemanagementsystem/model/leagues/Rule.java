@@ -8,6 +8,8 @@ import javax.persistence.Table;
 @Table(name = "rule")
 public class Rule {
 
+    /* associations */
+
     @ManyToOne
     private RuleBook ruleBook;
 
@@ -19,7 +21,9 @@ public class Rule {
         this.ruleBook = ruleBook;
     }
 
-    //attributes
+
+    /* attributes */
+
     private String message;
 
     public String getMessage() {
