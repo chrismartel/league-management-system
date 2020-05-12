@@ -1,4 +1,4 @@
-package ca.leaguemanagementsystem.model.leagues;
+package ca.leaguemanagementsystem.model.leagues.schedules;
 
 import javax.persistence.*;
 import java.util.List;
@@ -6,7 +6,7 @@ import java.util.List;
 @Entity
 @DiscriminatorValue("ssn")
 @Table(name = "season")
-public class Season extends Schedule{
+public class Season extends Schedule {
 
     /* associations */
 

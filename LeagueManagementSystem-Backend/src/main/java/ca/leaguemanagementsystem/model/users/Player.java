@@ -1,7 +1,7 @@
 package ca.leaguemanagementsystem.model.users;
 
-import ca.leaguemanagementsystem.model.leagues.Award;
-import ca.leaguemanagementsystem.model.leagues.PlayerTeamAssignment;
+import ca.leaguemanagementsystem.model.leagues.schedules.Award;
+import ca.leaguemanagementsystem.model.leagues.schedules.PlayerTeamAssignment;
 
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;

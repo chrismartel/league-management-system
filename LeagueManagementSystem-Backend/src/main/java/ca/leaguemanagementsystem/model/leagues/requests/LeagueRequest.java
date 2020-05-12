@@ -1,4 +1,4 @@
-package ca.leaguemanagementsystem.model.requests;
+package ca.leaguemanagementsystem.model.leagues.requests;
 
 import ca.leaguemanagementsystem.model.notifications.LeagueRequestNotification;
 
@@ -6,7 +6,6 @@ import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
-import java.net.Authenticator;
 
 @Entity
 @DiscriminatorValue("lr")

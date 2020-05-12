@@ -1,6 +1,6 @@
 package ca.leaguemanagementsystem.model.notifications;
 
-import ca.leaguemanagementsystem.model.leagues.events.Game;
+import ca.leaguemanagementsystem.model.leagues.schedules.events.Game;
 
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;

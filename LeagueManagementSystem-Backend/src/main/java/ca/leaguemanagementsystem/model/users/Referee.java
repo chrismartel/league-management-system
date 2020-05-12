@@ -1,6 +1,6 @@
 package ca.leaguemanagementsystem.model.users;
 
-import ca.leaguemanagementsystem.model.leagues.events.assignments.RefereeAssignment;
+import ca.leaguemanagementsystem.model.leagues.schedules.events.assignments.RefereeAssignment;
 
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;

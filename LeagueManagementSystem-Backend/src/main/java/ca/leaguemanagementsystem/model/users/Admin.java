@@ -1,6 +1,6 @@
 package ca.leaguemanagementsystem.model.users;
 
-import ca.leaguemanagementsystem.model.requests.ManagerRequest;
+import ca.leaguemanagementsystem.model.leagues.requests.ManagerRequest;
 
 import javax.persistence.*;
 import java.util.List;

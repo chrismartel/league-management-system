@@ -1,4 +1,4 @@
-package ca.leaguemanagementsystem.model.leagues;
+package ca.leaguemanagementsystem.model.leagues.schedules;
 
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
@@ -8,7 +8,7 @@ import javax.persistence.Table;
 @Entity
 @DiscriminatorValue("plyf")
 @Table(name = "playoff")
-public class Playoff extends Schedule{
+public class Playoff extends Schedule {
 
     /* associations */
 

@@ -1,7 +1,5 @@
-package ca.leaguemanagementsystem.model.leagues;
+package ca.leaguemanagementsystem.model.leagues.schedules;
 
-
-import ca.leaguemanagementsystem.model.leagues.events.Game;
 
 import javax.persistence.*;
 import java.util.List;

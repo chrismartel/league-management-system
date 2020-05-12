@@ -1,5 +1,6 @@
-package ca.leaguemanagementsystem.model.leagues;
+package ca.leaguemanagementsystem.model.leagues.schedules;
 
+import ca.leaguemanagementsystem.model.leagues.schedules.Team;
 import ca.leaguemanagementsystem.model.users.Player;
 
 

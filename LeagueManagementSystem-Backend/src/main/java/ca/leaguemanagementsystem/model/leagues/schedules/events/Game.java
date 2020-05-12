@@ -1,10 +1,8 @@
-package ca.leaguemanagementsystem.model.leagues.events;
+package ca.leaguemanagementsystem.model.leagues.schedules.events;
 
-import ca.leaguemanagementsystem.model.leagues.GameTeamAssignment;
-import ca.leaguemanagementsystem.model.leagues.Team;
-import ca.leaguemanagementsystem.model.leagues.events.assignments.GameAssignment;
+import ca.leaguemanagementsystem.model.leagues.schedules.GameTeamAssignment;
+import ca.leaguemanagementsystem.model.leagues.schedules.events.assignments.GameAssignment;
 import ca.leaguemanagementsystem.model.notifications.GameNotification;
-import org.springframework.expression.spel.ast.Assign;
 
 import javax.persistence.*;
 import java.util.List;

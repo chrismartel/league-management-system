@@ -1,5 +1,6 @@
 package ca.leaguemanagementsystem.model.leagues;
 
+import ca.leaguemanagementsystem.model.leagues.schedules.Registration;
 import ca.leaguemanagementsystem.model.users.User;
 
 import javax.persistence.*;

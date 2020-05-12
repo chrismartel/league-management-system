@@ -1,4 +1,4 @@
-package ca.leaguemanagementsystem.model.leagues.events;
+package ca.leaguemanagementsystem.model.leagues.schedules.events;
 
 import ca.leaguemanagementsystem.model.users.Player;
 

@@ -1,4 +1,4 @@
-package ca.leaguemanagementsystem.model.requests;
+package ca.leaguemanagementsystem.model.leagues.requests;
 
 import ca.leaguemanagementsystem.model.leagues.League;
 import ca.leaguemanagementsystem.model.users.User;
@@ -6,7 +6,6 @@ import ca.leaguemanagementsystem.model.users.User;
 import javax.persistence.*;
 import java.sql.Time;
 import java.util.Date;
-import java.util.List;
 
 @Inheritance(strategy = InheritanceType.JOINED)
 @Entity

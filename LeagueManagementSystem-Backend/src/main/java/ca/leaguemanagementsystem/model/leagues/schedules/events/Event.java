@@ -1,7 +1,7 @@
-package ca.leaguemanagementsystem.model.leagues.events;
+package ca.leaguemanagementsystem.model.leagues.schedules.events;
 
 import ca.leaguemanagementsystem.model.leagues.Location;
-import ca.leaguemanagementsystem.model.leagues.Schedule;
+import ca.leaguemanagementsystem.model.leagues.schedules.Schedule;
 
 import javax.persistence.*;
 import java.sql.Date;

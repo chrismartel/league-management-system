@@ -1,7 +1,6 @@
-package ca.leaguemanagementsystem.model.requests;
+package ca.leaguemanagementsystem.model.leagues.requests;
 
 import ca.leaguemanagementsystem.model.users.Admin;
-import ca.leaguemanagementsystem.model.users.User;
 
 import javax.persistence.*;
 

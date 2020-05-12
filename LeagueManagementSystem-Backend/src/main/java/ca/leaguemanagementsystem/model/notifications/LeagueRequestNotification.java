@@ -1,7 +1,6 @@
 package ca.leaguemanagementsystem.model.notifications;
 
-import ca.leaguemanagementsystem.model.requests.LeagueRequest;
-import ca.leaguemanagementsystem.model.requests.Request;
+import ca.leaguemanagementsystem.model.leagues.requests.LeagueRequest;
 
 import javax.persistence.*;
 

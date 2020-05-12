@@ -1,7 +1,8 @@
 package ca.leaguemanagementsystem.model.leagues;
 
+import ca.leaguemanagementsystem.model.leagues.schedules.Schedule;
+
 import javax.persistence.*;
-import java.util.Date;
 import java.util.List;
 
 @Inheritance(strategy = InheritanceType.JOINED)

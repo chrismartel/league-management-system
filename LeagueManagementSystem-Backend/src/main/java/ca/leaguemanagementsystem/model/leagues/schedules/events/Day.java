@@ -1,4 +1,4 @@
-package ca.leaguemanagementsystem.model.leagues.events;
+package ca.leaguemanagementsystem.model.leagues.schedules.events;
 
 public enum Day {
 

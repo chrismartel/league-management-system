@@ -1,6 +1,5 @@
-package ca.leaguemanagementsystem.model.leagues.events.assignments;
+package ca.leaguemanagementsystem.model.leagues.schedules.events.assignments;
 
-import ca.leaguemanagementsystem.model.users.Referee;
 import ca.leaguemanagementsystem.model.users.ScoreKeeper;
 
 import javax.persistence.DiscriminatorValue;
