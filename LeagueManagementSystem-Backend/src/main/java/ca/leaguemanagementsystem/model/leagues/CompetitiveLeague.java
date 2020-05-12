@@ -258,4 +258,15 @@ public class CompetitiveLeague extends League{
     public void setRecordsFreeThrowsAttempted(boolean recordsFreeThrowsAttempted) {
         this.recordsFreeThrowsAttempted = recordsFreeThrowsAttempted;
     }
+
+
+    private boolean gameHaveMVPs;  // does the games have MVPs
+
+    public boolean isGameHaveMVPs() {
+        return gameHaveMVPs;
+    }
+
+    public void setGameHaveMVPs(boolean gameHaveMVPs) {
+        this.gameHaveMVPs = gameHaveMVPs;
+    }
 }

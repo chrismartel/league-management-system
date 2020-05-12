@@ -73,6 +73,22 @@ public class Game extends Event{
     }
 
 
+    @OneToOne(
+            cascade = CascadeType.ALL,
+            mappedBy = "game",
+            optional = true
+    )
+    private MVP mvp;    // mvp of the game
+
+    public MVP getMvp() {
+        return mvp;
+    }
+
+    public void setMvp(MVP mvp) {
+        this.mvp = mvp;
+    }
+
+
     /* attributes */
 
     private GameState gameState;

@@ -25,16 +25,15 @@ public class Award {
 
 
     @ManyToOne
-    private League league;  // league in which the award was deserved SHOULD BE SEASON
+    private Season season;  // season in which the award was descerned
 
-    public League getLeague() {
-        return league;
+    public Season getSeason() {
+        return season;
     }
 
-    public void setLeague(League league) {
-        this.league = league;
+    public void setSeason(Season season) {
+        this.season = season;
     }
-
 
     /* attributes */
 

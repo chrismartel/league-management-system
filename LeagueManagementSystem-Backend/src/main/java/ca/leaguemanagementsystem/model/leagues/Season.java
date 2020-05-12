@@ -10,8 +10,24 @@ public class Season extends Schedule{
 
     /* associations */
 
+    @OneToMany(
+            mappedBy = "season",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true
+    )
+    private List<Award> awards; // season awards
+
+    public List<Award> getAwards() {
+        return awards;
+    }
+
+    public void setAwards(List<Award> awards) {
+        this.awards = awards;
+    }
+
+
     @OneToOne
-    private Playoff playoff;    //
+    private Playoff playoff;    // playoff schedule of the season
 
     public Playoff getPlayoff() {
         return playoff;

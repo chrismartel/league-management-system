@@ -16,22 +16,6 @@ public class League {
             cascade = CascadeType.ALL,
             orphanRemoval = true
     )
-    private List<Award> awards; // league awards
-
-    public List<Award> getAwards() {
-        return awards;
-    }
-
-    public void setAwards(List<Award> awards) {
-        this.awards = awards;
-    }
-
-
-    @OneToMany(
-            mappedBy = "league",
-            cascade = CascadeType.ALL,
-            orphanRemoval = true
-    )
     private List<Location> locations;   // possible locations for games
 
     public List<Location> getLocations() {

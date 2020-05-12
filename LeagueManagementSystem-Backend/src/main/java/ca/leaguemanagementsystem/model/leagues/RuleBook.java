@@ -9,9 +9,7 @@ public class RuleBook {
 
     /* associations */
 
-    @OneToOne(
-            mappedBy = "ruleBook",
-            optional = false)
+    @OneToOne
     private League league;
 
     public League getLeague() {
