@@ -14,16 +14,15 @@ public class Notification {
     /* associations */
 
     @ManyToOne
-    private User user;  // user to which the notification is sent
+    private User receiver;  // user to which the notification is sent
 
-    public User getUser() {
-        return user;
+    public User getReceiver() {
+        return receiver;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setReceiver(User receiver) {
+        this.receiver = receiver;
     }
-    
 
 
     /* attributes */

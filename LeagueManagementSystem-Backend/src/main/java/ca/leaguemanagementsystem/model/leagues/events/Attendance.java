@@ -45,4 +45,17 @@ public class Attendance {
     public void setAttending(boolean value){
         this.isAttending = value;
     }
+
+
+    @Id
+    @GeneratedValue
+    private Integer attendanceId;   // id for database
+
+    public Integer getAttendanceId() {
+        return attendanceId;
+    }
+
+    public void setAttendanceId(Integer attendanceId) {
+        this.attendanceId = attendanceId;
+    }
 }

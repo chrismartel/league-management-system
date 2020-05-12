@@ -34,4 +34,19 @@ public class RuleBook {
     public void setRules(List<Rule> rules) {
         this.rules = rules;
     }
+
+
+    /* attributes */
+
+    @Id
+    @GeneratedValue
+    private Integer ruleBookId;
+
+    public Integer getRuleBookId() {
+        return ruleBookId;
+    }
+
+    public void setRuleBookId(Integer ruleBookId) {
+        this.ruleBookId = ruleBookId;
+    }
 }

@@ -2,9 +2,7 @@ package ca.leaguemanagementsystem.model.users;
 
 import ca.leaguemanagementsystem.model.requests.ManagerRequest;
 
-import javax.persistence.Entity;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.List;
 
 @Entity
@@ -78,5 +76,18 @@ public class Admin {
 
     public void setLogged(boolean logged) {
         isLogged = logged;
+    }
+
+
+    @Id
+    @GeneratedValue
+    private Integer adminId;
+
+    public Integer getAdminId() {
+        return adminId;
+    }
+
+    public void setAdminId(Integer adminId) {
+        this.adminId = adminId;
     }
 }

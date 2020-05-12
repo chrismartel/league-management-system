@@ -7,7 +7,7 @@ import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
 
-@Entity(name = "User")
+@Entity
 @Table(name = "user")
 public class User {
 
@@ -43,6 +43,7 @@ public class User {
     public void setNotifications(List<Notification> notifications) {
         this.notifications = notifications;
     }
+
 
 
     @OneToMany(
@@ -106,6 +107,7 @@ public class User {
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
+
 
     private String email; // email address to join the user
 

@@ -1,8 +1,6 @@
 package ca.leaguemanagementsystem.model.leagues;
 
-import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "rule")
@@ -32,6 +30,19 @@ public class Rule {
 
     public void setMessage(String message) {
         this.message = message;
+    }
+
+
+    @Id
+    @GeneratedValue
+    private Integer ruleId; // id for database
+
+    public Integer getRuleId() {
+        return ruleId;
+    }
+
+    public void setRuleId(Integer ruleId) {
+        this.ruleId = ruleId;
     }
 }
 

@@ -2,9 +2,7 @@ package ca.leaguemanagementsystem.model.leagues;
 
 import ca.leaguemanagementsystem.model.users.Player;
 
-import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "award")
@@ -35,7 +33,21 @@ public class Award {
         this.season = season;
     }
 
+
     /* attributes */
+
+    @Id
+    @GeneratedValue
+    private Integer awardID;
+
+    public Integer getAwardID() {
+        return awardID;
+    }
+
+    public void setAwardID(Integer awardID) {
+        this.awardID = awardID;
+    }
+
 
     private String awardName;
 

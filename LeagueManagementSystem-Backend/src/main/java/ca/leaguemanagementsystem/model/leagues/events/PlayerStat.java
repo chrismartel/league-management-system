@@ -188,4 +188,17 @@ public class PlayerStat {
     public void setTechnicalFouls(Integer technicalFouls) {
         this.technicalFouls = technicalFouls;
     }
+
+
+    @Id
+    @GeneratedValue
+    private Integer playerStatId;
+
+    public Integer getPlayerStatId() {
+        return playerStatId;
+    }
+
+    public void setPlayerStatId(Integer playerStatId) {
+        this.playerStatId = playerStatId;
+    }
 }

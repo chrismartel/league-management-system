@@ -36,7 +36,19 @@ public class Location {
     /* attributes */
 
     @Id
-    private String LocationName;            //Id for database
+    @GeneratedValue
+    private Integer locationId;            //Id for database
+
+    public Integer getLocationId() {
+        return locationId;
+    }
+
+    public void setLocationId(Integer locationId) {
+        this.locationId = locationId;
+    }
+
+
+    private String LocationName;
 
     public String getLocationName() {
         return LocationName;

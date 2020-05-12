@@ -2,10 +2,7 @@ package ca.leaguemanagementsystem.model.leagues.events;
 
 import ca.leaguemanagementsystem.model.users.Player;
 
-import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "mvp")
@@ -34,5 +31,20 @@ public class MVP {
 
     public void setGame(Game game) {
         this.game = game;
+    }
+
+
+    /* attributes */
+
+    @Id
+    @GeneratedValue
+    private Integer mvpId;
+
+    public Integer getMvpId() {
+        return mvpId;
+    }
+
+    public void setMvpId(Integer mvpId) {
+        this.mvpId = mvpId;
     }
 }
