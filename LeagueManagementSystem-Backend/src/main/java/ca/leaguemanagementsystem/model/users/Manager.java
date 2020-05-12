@@ -15,9 +15,10 @@ public class Manager extends UserRole{
     
     /* associations */
 
-    @OneToMany(mappedBy = "manager")
+
     private List<League> managedLeagues;
 
+    @OneToMany(mappedBy = "manager")
     public List<League> getManagedLeagues() {
         return managedLeagues;
     }

@@ -15,13 +15,14 @@ public class Event {
 
     /* associations */
 
+
+    private List<Attendance> attendances;   // attendances to the event
+
     @OneToMany(
             mappedBy = "event",
             cascade = CascadeType.ALL,
             orphanRemoval = true
     )
-    private List<Attendance> attendances;   // attendances to the event
-
     public List<Attendance> getAttendances() {
         return attendances;
     }
@@ -31,9 +32,10 @@ public class Event {
     }
 
 
-    @ManyToOne
+
     private Location location;  // event location
 
+    @ManyToOne
     public Location getLocation() {
         return location;
     }
@@ -43,9 +45,10 @@ public class Event {
     }
 
 
-    @ManyToOne
     private Schedule schedule;  // schedule in which the event is scheduled
 
+
+    @ManyToOne
     public Schedule getSchedule() {
         return schedule;
     }
@@ -57,10 +60,11 @@ public class Event {
 
     /* attributes */
 
-    @Id
-    @GeneratedValue
+
     private long eventId;               // Id for database
 
+    @Id
+    @GeneratedValue
     public long getEventId() {
         return eventId;
     }
@@ -70,7 +74,6 @@ public class Event {
     }
 
 
-    @Temporal(TemporalType.TIME)
     private Time startTime;                 // Start time of the event
 
     public Time getStartTime() {
@@ -82,7 +85,6 @@ public class Event {
     }
 
 
-    @Temporal(TemporalType.TIME)
     private Time endTime;                   // End time of the event
 
     public Time getEndTime() {
@@ -94,7 +96,6 @@ public class Event {
     }
 
 
-    @Temporal(TemporalType.DATE)
     private Date date;                      // Date of the event
 
     public Date getDate(){

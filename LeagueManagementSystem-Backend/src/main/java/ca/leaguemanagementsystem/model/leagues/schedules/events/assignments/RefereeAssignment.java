@@ -10,12 +10,13 @@ import javax.persistence.Table;
 @Entity
 @DiscriminatorValue("ref_assign")
 @Table(name = "refereeAssignment")
-public class RefereeAssignment {
+public class RefereeAssignment extends GameAssignment{
 
     /* associations */
-    @ManyToOne
+
     private Referee referee;    // referee assigned
 
+    @ManyToOne
     public Referee getReferee() {
         return referee;
     }

@@ -5,7 +5,7 @@ import ca.leaguemanagementsystem.model.leagues.schedules.events.Event;
 import ca.leaguemanagementsystem.model.leagues.schedules.Registration;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.sql.Date;
 import java.util.List;
 
 @Inheritance(strategy = InheritanceType.JOINED)
@@ -15,9 +15,10 @@ public class Schedule {
 
     /* associations */
 
-    @ManyToOne
+
     private League league;
 
+    @ManyToOne
     public League getLeague() {
         return league;
     }
@@ -27,13 +28,14 @@ public class Schedule {
     }
 
 
+
+    private List<Event> events;
+
     @OneToMany(
             mappedBy = "schedule",
             cascade = CascadeType.ALL,
             orphanRemoval = true
     )
-    private List<Event> events;
-
     public List<Event> getEvents() {
         return events;
     }
@@ -43,13 +45,14 @@ public class Schedule {
     }
 
 
+
+    private List<Registration> registrations;
+
     @OneToMany(
             mappedBy = "schedule",
             cascade = CascadeType.ALL,
             orphanRemoval = true
     )
-    private List<Registration> registrations;
-
     public List<Registration> getRegistrations() {
         return registrations;
     }
@@ -61,10 +64,11 @@ public class Schedule {
 
     /* attributes */
 
-    @Id
-    @GeneratedValue
+
     private Integer scheduleId;     // Id for database
 
+    @Id
+    @GeneratedValue
     public Integer getScheduleId() {
         return scheduleId;
     }
@@ -85,7 +89,6 @@ public class Schedule {
     }
 
 
-    @Temporal(TemporalType.DATE)
     private Date startDate;                 // Start date of schedule
 
     public Date getStartDate() {
@@ -97,7 +100,6 @@ public class Schedule {
     }
 
 
-    @Temporal(TemporalType.DATE)
     private Date endDate;                   // End date of schedule
 
     public Date getEndDate() {

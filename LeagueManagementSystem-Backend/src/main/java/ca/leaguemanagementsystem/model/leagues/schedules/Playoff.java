@@ -12,10 +12,12 @@ public class Playoff extends Schedule {
 
     /* associations */
 
-    @OneToOne(mappedBy = "playoffSchedule",
-                optional = false)
+
     private Season season;  // playoff schedule following the season
 
+    @OneToOne(
+            optional = false
+    )
     public Season getSeason() {
         return season;
     }

@@ -1,6 +1,6 @@
 package ca.leaguemanagementsystem.model.notifications;
 
-import ca.leaguemanagementsystem.model.users.User;
+import ca.leaguemanagementsystem.model.users.AppUser;
 
 import javax.persistence.*;
 import java.sql.Date;
@@ -13,16 +13,19 @@ public class Notification {
 
     /* associations */
 
-    @ManyToOne
-    private User receiver;  // user to which the notification is sent
 
-    public User getReceiver() {
+    private AppUser receiver;  // user to which the notification is sent
+
+    @ManyToOne
+    public AppUser getReceiver() {
         return receiver;
     }
 
-    public void setReceiver(User receiver) {
+    public void setReceiver(AppUser receiver) {
         this.receiver = receiver;
     }
+
+
 
 
     /* attributes */
@@ -57,5 +60,19 @@ public class Notification {
 
     public void setScheduledTime(Time scheduledTime) {
         this.scheduledTime = scheduledTime;
+    }
+
+
+
+    private Integer notificationId;
+
+    @Id
+    @GeneratedValue
+    public Integer getNotificationId() {
+        return notificationId;
+    }
+
+    public void setNotificationId(Integer notificationId) {
+        this.notificationId = notificationId;
     }
 }

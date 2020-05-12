@@ -16,9 +16,10 @@ public class Player extends UserRole{
 
     /* associations */
 
-    @OneToMany(mappedBy = "winner")
+
     private List<Award> awards; // awards won
 
+    @OneToMany(mappedBy = "player")
     public List<Award> getAwards() {
         return awards;
     }
@@ -28,9 +29,10 @@ public class Player extends UserRole{
     }
 
 
-    @OneToMany(mappedBy = "player")
+
     private List<PlayerTeamAssignment> assignedTeams; // teams assigned
 
+    @OneToMany(mappedBy = "player")
     public List<PlayerTeamAssignment> getAssignedTeams() {
         return assignedTeams;
     }

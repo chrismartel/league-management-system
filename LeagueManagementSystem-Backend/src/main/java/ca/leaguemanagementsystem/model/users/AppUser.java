@@ -4,22 +4,23 @@ import ca.leaguemanagementsystem.model.leagues.Membership;
 import ca.leaguemanagementsystem.model.notifications.Notification;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.sql.Date;
 import java.util.List;
 
 @Entity
-@Table(name = "user")
-public class User {
+@Table(name = "appUser")
+public class AppUser {
 
     /* associations */
 
+
+    private List<UserRole> userRoles;   // roles of the user
+
     @OneToMany(
-            mappedBy = "user",
+            mappedBy = "appUser",
             cascade = CascadeType.ALL,
             orphanRemoval = true
     )
-    private List<UserRole> userRoles;   // roles of the user
-
     public List<UserRole> getUserRoles() {
         return userRoles;
     }
@@ -29,13 +30,14 @@ public class User {
     }
 
 
+
+    private List<Notification> notifications;   // notifications received by the user
+
     @OneToMany(
             mappedBy = "receiver",
             cascade = CascadeType.ALL,
             orphanRemoval = true
     )
-    private List<Notification> notifications;   // notifications received by the user
-
     public List<Notification> getNotifications() {
         return notifications;
     }
@@ -46,13 +48,14 @@ public class User {
 
 
 
+
+    private List<Membership> memberships;   // memberships to leagues of the user
+
     @OneToMany(
             mappedBy = "member",
             cascade = CascadeType.ALL,
             orphanRemoval = true
     )
-    private List<Membership> memberships;   // memberships to leagues of the user
-
     public List<Membership> getMemberships() {
         return memberships;
     }
@@ -75,9 +78,10 @@ public class User {
     }
 
 
-    @Id
+
     private String username;    // unique username
 
+    @Id
     public String getUsername() {
         return username;
     }

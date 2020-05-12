@@ -10,9 +10,10 @@ public class GameTeamAssignment {
 
     /* associations */
 
-    @ManyToOne
+
     private Game game;  // assigned game
 
+    @ManyToOne
     public Game getGame() {
         return game;
     }
@@ -21,9 +22,10 @@ public class GameTeamAssignment {
         this.game = game;
     }
 
-    @ManyToOne
+
     private Team team;  // assigned team
 
+    @ManyToOne
     public Team getTeam() {
         return team;
     }
@@ -35,10 +37,11 @@ public class GameTeamAssignment {
 
     /* attributes */
 
-    @Id
-    @GeneratedValue
+
     private Integer gameTeamAssignmentId;
 
+    @Id
+    @GeneratedValue
     public Integer getGameTeamAssignmentId() {
         return gameTeamAssignmentId;
     }

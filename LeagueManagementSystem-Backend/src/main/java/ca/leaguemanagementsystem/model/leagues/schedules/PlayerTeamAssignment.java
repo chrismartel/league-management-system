@@ -8,8 +8,8 @@ import javax.persistence.*;
 
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import java.sql.Date;
 
-import java.util.Date;
 
 @Entity
 @Table(name = "teamAssignment")
@@ -18,10 +18,10 @@ public class PlayerTeamAssignment {
 
     /* associations */
 
-    @ManyToOne
+
     private Player player;  // assigned player
 
-
+    @ManyToOne
     public Player getPlayer() {
         return player;
     }
@@ -31,10 +31,10 @@ public class PlayerTeamAssignment {
     }
 
 
-    @ManyToOne
+
     private Team team;  // team assigned to
 
-
+    @ManyToOne
     public Team getTeam() {
         return team;
     }
@@ -46,10 +46,11 @@ public class PlayerTeamAssignment {
 
     /* attributes */
 
-    @Id
-    @GeneratedValue
+
     private Integer teamAssignmentId;
 
+    @Id
+    @GeneratedValue
     public Integer getTeamAssignmentId() {
         return teamAssignmentId;
     }
@@ -59,7 +60,6 @@ public class PlayerTeamAssignment {
     }
 
 
-    @Temporal(TemporalType.DATE)
     private Date date;  // date of assignment
 
     public Date getDate() {

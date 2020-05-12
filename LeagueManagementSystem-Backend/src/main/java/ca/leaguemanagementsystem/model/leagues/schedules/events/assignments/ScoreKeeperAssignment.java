@@ -10,12 +10,13 @@ import javax.persistence.Table;
 @Entity
 @DiscriminatorValue("sk_assign")
 @Table(name = "scoreKeeperAssignment")
-public class ScoreKeeperAssignment {
+public class ScoreKeeperAssignment extends GameAssignment{
 
     /* associations */
-    @ManyToOne
+
     private ScoreKeeper scoreKeeper;    // score keeper assigned
 
+    @ManyToOne
     public ScoreKeeper getScoreKeeper() {
         return scoreKeeper;
     }

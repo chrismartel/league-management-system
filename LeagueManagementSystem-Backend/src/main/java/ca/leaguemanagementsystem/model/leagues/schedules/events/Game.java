@@ -15,13 +15,13 @@ public class Game extends Event{
 
     /* associations */
 
+    private List<PlayerStat> playerStats;   // player stats for players attending the game
+
     @OneToMany(
             mappedBy = "game",
             cascade = CascadeType.ALL,
             orphanRemoval = true
     )
-    private List<PlayerStat> playerStats;   // player stats for players attending the game
-
     public List<PlayerStat> getPlayerStats() {
         return playerStats;
     }
@@ -31,9 +31,10 @@ public class Game extends Event{
     }
 
 
-    @OneToMany(mappedBy = "game")
+
     private List<GameNotification> gameNotifications;   // notifications generated for a game
 
+    @OneToMany(mappedBy = "game")
     public List <GameNotification> getGameNotifications(){
         return gameNotifications;
     }
@@ -43,9 +44,10 @@ public class Game extends Event{
     }
 
 
-    @OneToMany(mappedBy = "game")
+
     private List<GameTeamAssignment> gameTeamAssignments;   // teams assigned to the game (must be 2)
 
+    @OneToMany(mappedBy = "game")
     public List<GameTeamAssignment> getGameTeamAssignments() {
         return gameTeamAssignments;
     }
@@ -55,13 +57,14 @@ public class Game extends Event{
     }
 
 
+
+    private List<GameAssignment> gameAssignments;   // referee and score keeping assignments for the game
+
     @OneToMany(
-            mappedBy = "gameAssignments",
+            mappedBy = "game",
             cascade = CascadeType.ALL,
             orphanRemoval = true
     )
-    private List<GameAssignment> gameAssignments;   // referee and score keeping assignments for the game
-
     public List<GameAssignment> getGameAssignments() {
         return gameAssignments;
     }
@@ -71,13 +74,14 @@ public class Game extends Event{
     }
 
 
+
+    private MVP mvp;    // mvp of the game
+
     @OneToOne(
             cascade = CascadeType.ALL,
             mappedBy = "game",
             optional = true
     )
-    private MVP mvp;    // mvp of the game
-
     public MVP getMvp() {
         return mvp;
     }

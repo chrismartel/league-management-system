@@ -1,10 +1,10 @@
 package ca.leaguemanagementsystem.model.leagues;
 
 import ca.leaguemanagementsystem.model.leagues.schedules.Registration;
-import ca.leaguemanagementsystem.model.users.User;
+import ca.leaguemanagementsystem.model.users.AppUser;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.sql.Date;
 import java.util.List;
 
 @Entity
@@ -13,21 +13,24 @@ public class Membership {
 
     /* associations */
 
-    @ManyToOne
-    private User member;    // owner of the membership
+    private AppUser member;    // owner of the membership
 
-    public User getMember() {
+    @ManyToOne
+    public AppUser getMember() {
         return member;
     }
 
-    public void setMember(User member) {
+    public void setMember(AppUser member) {
         this.member = member;
     }
 
 
-    @ManyToOne
+
+
+
     private League league;  // membership to which league
 
+    @ManyToOne
     public League getLeague() {
         return league;
     }
@@ -36,9 +39,11 @@ public class Membership {
         this.league = league;
     }
 
-    @OneToMany(mappedBy = "membership")
+
+
     private List<Registration> registrations;   // season registrations through the league membership
 
+    @OneToMany(mappedBy = "membership")
     public List<Registration> getRegistrations() {
         return registrations;
     }
@@ -49,10 +54,11 @@ public class Membership {
 
 
     /* attributes */
-    @Id
-    @GeneratedValue
+
     private long membershipId;  // Id for database
 
+    @Id
+    @GeneratedValue
     public long getMembershipId() {
         return membershipId;
     }
@@ -62,7 +68,6 @@ public class Membership {
     }
 
 
-    @Temporal(TemporalType.DATE)
     private Date date;          // starting date of the  membership
 
     public Date getDate() {

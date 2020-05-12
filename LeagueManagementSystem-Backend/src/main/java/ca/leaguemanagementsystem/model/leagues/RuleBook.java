@@ -9,9 +9,10 @@ public class RuleBook {
 
     /* associations */
 
-    @OneToOne
+
     private League league;
 
+    @OneToOne
     public League getLeague() {
         return league;
     }
@@ -20,13 +21,14 @@ public class RuleBook {
         this.league = league;
     }
 
+
+    private List<Rule> rules;
+
     @OneToMany(
             mappedBy = "ruleBook",
             cascade = CascadeType.ALL,
             orphanRemoval = true
     )
-    private List<Rule> rules;
-
     public List<Rule> getRules() {
         return rules;
     }
@@ -38,10 +40,11 @@ public class RuleBook {
 
     /* attributes */
 
-    @Id
-    @GeneratedValue
+
     private Integer ruleBookId;
 
+    @Id
+    @GeneratedValue
     public Integer getRuleBookId() {
         return ruleBookId;
     }

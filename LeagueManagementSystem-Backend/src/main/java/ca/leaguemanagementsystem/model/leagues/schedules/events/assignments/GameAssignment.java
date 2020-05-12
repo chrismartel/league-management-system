@@ -11,9 +11,10 @@ import javax.persistence.*;
 public class GameAssignment {
 
     /* associations */
-    @ManyToOne
+
     private Game game;  // assignment to which game
 
+    @ManyToOne
     public Game getGame() {
         return game;
     }
@@ -35,4 +36,17 @@ public class GameAssignment {
         isAccepted = accepted;
     }
 
+
+
+    private Integer gameAssignmentId;
+
+    @Id
+    @GeneratedValue
+    public Integer getGameAssignmentId() {
+        return gameAssignmentId;
+    }
+
+    public void setGameAssignmentId(Integer gameAssignmentId) {
+        this.gameAssignmentId = gameAssignmentId;
+    }
 }

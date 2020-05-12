@@ -9,9 +9,10 @@ import javax.persistence.*;
 @Table(name = "request_notification")
 public class LeagueRequestNotification extends Notification{
 
-    @OneToOne(optional = false)
+
     private LeagueRequest request;
 
+    @OneToOne(optional = false)
     public LeagueRequest getRequest() {
         return request;
     }

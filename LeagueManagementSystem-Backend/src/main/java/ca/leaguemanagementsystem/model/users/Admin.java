@@ -11,9 +11,10 @@ public class Admin {
 
     /* associations */
 
-    @OneToMany(mappedBy = "admin")
+
     private List<ManagerRequest> managerRequests;   // manager requests from user
 
+    @OneToMany(mappedBy = "admin")
     public List<ManagerRequest> getManagerRequests() {
         return managerRequests;
     }
@@ -79,10 +80,11 @@ public class Admin {
     }
 
 
-    @Id
-    @GeneratedValue
+
     private Integer adminId;
 
+    @Id
+    @GeneratedValue
     public Integer getAdminId() {
         return adminId;
     }

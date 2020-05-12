@@ -10,9 +10,10 @@ public class PlayerStat {
 
     /* associations */
 
-    @ManyToOne(optional = false)
+
     private Player player;  // player of whom the stats are recorded
 
+    @ManyToOne(optional = false)
     public Player getPlayer() {
         return player;
     }
@@ -22,9 +23,10 @@ public class PlayerStat {
     }
 
 
-    @ManyToOne
+
     private Game game;  // game during which the stats are recorded
 
+    @ManyToOne
     public Game getGame() {
         return game;
     }
@@ -190,10 +192,11 @@ public class PlayerStat {
     }
 
 
-    @Id
-    @GeneratedValue
+
     private Integer playerStatId;
 
+    @Id
+    @GeneratedValue
     public Integer getPlayerStatId() {
         return playerStatId;
     }

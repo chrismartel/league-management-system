@@ -11,9 +11,10 @@ public class Location {
 
     /* associations */
 
-    @ManyToOne
+
     private League league;
 
+    @ManyToOne
     public League getLeague() {
         return league;
     }
@@ -22,9 +23,11 @@ public class Location {
         this.league = league;
     }
 
-    @OneToMany(mappedBy = "location")
+
+
     private List<Event> event;
 
+    @OneToMany(mappedBy = "location")
     public List<Event> getEvent() {
         return event;
     }
@@ -35,10 +38,11 @@ public class Location {
 
     /* attributes */
 
-    @Id
-    @GeneratedValue
+
     private Integer locationId;            //Id for database
 
+    @Id
+    @GeneratedValue
     public Integer getLocationId() {
         return locationId;
     }

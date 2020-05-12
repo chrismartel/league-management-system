@@ -10,9 +10,10 @@ public class Attendance {
 
     /* associations */
 
-    @ManyToOne
+
     private Event event;    // attendance for which event
 
+    @ManyToOne
     public Event getEvent() {
         return event;
     }
@@ -22,9 +23,10 @@ public class Attendance {
     }
 
 
-    @ManyToOne(optional = false)
+
     private Player player;  // attendance for which player
 
+    @ManyToOne(optional = false)
     public Player getPlayer(){
         return this.player;
     }
@@ -47,10 +49,11 @@ public class Attendance {
     }
 
 
-    @Id
-    @GeneratedValue
+
     private Integer attendanceId;   // id for database
 
+    @Id
+    @GeneratedValue
     public Integer getAttendanceId() {
         return attendanceId;
     }

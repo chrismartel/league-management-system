@@ -10,9 +10,10 @@ public class Team {
 
     /* associations */
 
-    @OneToMany(mappedBy = "team")
+
     private List<PlayerTeamAssignment> playerTeamAssignments;
 
+    @OneToMany(mappedBy = "team")
     public List<PlayerTeamAssignment> getPlayerTeamAssignments() {
         return playerTeamAssignments;
     }
@@ -21,9 +22,10 @@ public class Team {
         this.playerTeamAssignments = playerTeamAssignments;
     }
 
-    @ManyToOne
+
     private Season season;  // season in which the team plays, season is the parent
 
+    @ManyToOne
     public Season getSeason() {
         return season;
     }
@@ -33,9 +35,10 @@ public class Team {
     }
 
 
-    @OneToMany(mappedBy = "team")
+
     private List<GameTeamAssignment> gameTeamAssignments;   // games assignments of the team
 
+    @OneToMany(mappedBy = "team")
     public List<GameTeamAssignment> getGameTeamAssignments() {
         return gameTeamAssignments;
     }
@@ -47,10 +50,11 @@ public class Team {
 
     /* attributes */
 
-    @Id
-    @GeneratedValue
+
     private int teamId; // Id for database
 
+    @Id
+    @GeneratedValue
     public int getTeamId() {
         return teamId;
     }

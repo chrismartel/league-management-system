@@ -1,7 +1,7 @@
 package ca.leaguemanagementsystem.model.users;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.sql.Date;
 
 @Inheritance(strategy = InheritanceType.JOINED)
 @Entity
@@ -10,23 +10,24 @@ public class UserRole {
 
     /* associations */
 
-    private User user;  // user to which the role belongs
+    private AppUser appUser;  // user to which the role belongs
 
-    public User getUser() {
-        return user;
+    @ManyToOne
+    public AppUser getAppUser() {
+        return appUser;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setAppUser(AppUser appUser) {
+        this.appUser = appUser;
     }
 
 
     /* attributes */
 
-    @Id
-    @GeneratedValue
     private long userRoleId;    // Id for database
 
+    @Id
+    @GeneratedValue
     public long getUserRoleId() {
         return userRoleId;
     }

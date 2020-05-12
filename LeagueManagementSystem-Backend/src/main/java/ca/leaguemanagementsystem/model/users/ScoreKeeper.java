@@ -15,9 +15,10 @@ public class ScoreKeeper extends UserRole {
 
     /* associations */
 
-    @OneToMany(mappedBy = "scoreKeeper")
+
     private List<ScoreKeeperAssignment> scoreKeeperAssignments;
 
+    @OneToMany(mappedBy = "scoreKeeper")
     public List<ScoreKeeperAssignment> getScoreKeeperAssignments() {
         return scoreKeeperAssignments;
     }

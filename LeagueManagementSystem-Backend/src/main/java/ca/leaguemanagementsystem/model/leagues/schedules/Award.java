@@ -10,9 +10,10 @@ public class Award {
 
     /* associations */
 
-    @ManyToOne
+
     private Player player;  // player to which the award is deserved
 
+    @ManyToOne
     public Player getPlayer() {
         return player;
     }
@@ -22,9 +23,9 @@ public class Award {
     }
 
 
-    @ManyToOne
     private Season season;  // season in which the award was descerned
 
+    @ManyToOne
     public Season getSeason() {
         return season;
     }
@@ -36,10 +37,10 @@ public class Award {
 
     /* attributes */
 
-    @Id
-    @GeneratedValue
     private Integer awardID;
 
+    @Id
+    @GeneratedValue
     public Integer getAwardID() {
         return awardID;
     }

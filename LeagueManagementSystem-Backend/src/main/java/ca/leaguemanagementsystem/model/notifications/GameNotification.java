@@ -15,9 +15,10 @@ public class GameNotification extends Notification{
 
     /* associations */
 
-    @ManyToOne
+
     private Game game;  // game of which the player gets notified
 
+    @ManyToOne
     public Game getGame() {
         return game;
     }

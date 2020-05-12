@@ -3,7 +3,7 @@ package ca.leaguemanagementsystem.model.leagues.schedules;
 import ca.leaguemanagementsystem.model.leagues.Membership;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.sql.Date;
 
 @Entity
 @Table(name = "registration")
@@ -11,9 +11,10 @@ public class Registration {
 
     /* associations */
 
-    @ManyToOne
+
     private Membership membership;  // league membership
 
+    @ManyToOne
     public Membership getMembership() {
         return membership;
     }
@@ -23,9 +24,10 @@ public class Registration {
     }
 
 
-    @ManyToOne
+
     private Schedule schedule;    // schedule registered to
 
+    @ManyToOne
     public Schedule getSchedule() {
         return schedule;
     }
@@ -37,10 +39,11 @@ public class Registration {
 
     /* attributes */
 
-    @Id
-    @GeneratedValue
+
     private long registrationId;
 
+    @Id
+    @GeneratedValue
     public long getRegistrationId() {
         return registrationId;
     }
@@ -50,7 +53,6 @@ public class Registration {
     }
 
 
-    @Temporal(TemporalType.DATE)
     private Date date;  // date of the registration
 
     public Date getDate() {

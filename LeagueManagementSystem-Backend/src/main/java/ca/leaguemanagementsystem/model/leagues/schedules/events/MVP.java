@@ -10,9 +10,10 @@ public class MVP {
 
     /* associations */
 
-    @ManyToOne
+
     private Player player;  // player nominated as mvp
 
+    @ManyToOne
     public Player getPlayer() {
         return player;
     }
@@ -22,9 +23,10 @@ public class MVP {
     }
 
 
-    @OneToOne(optional = false)
+
     private Game game;  // game in which the player was mvp
 
+    @OneToOne(optional = false)
     public Game getGame() {
         return game;
     }
@@ -36,10 +38,10 @@ public class MVP {
 
     /* attributes */
 
-    @Id
-    @GeneratedValue
     private Integer mvpId;
 
+    @Id
+    @GeneratedValue
     public Integer getMvpId() {
         return mvpId;
     }

@@ -14,9 +14,9 @@ public class LeagueRequest extends Request{
 
     /* associations */
 
-    @OneToOne(optional = false)
     private LeagueRequestNotification leagueRequestNotification;    // notify the manager of the league when making a request
 
+    @OneToOne(optional = false)
     public LeagueRequestNotification getLeagueRequestNotification() {
         return leagueRequestNotification;
     }

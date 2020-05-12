@@ -15,9 +15,10 @@ public class Referee extends UserRole {
 
     /* associations */
 
-    @OneToMany(mappedBy = "referee")
+
     private List<RefereeAssignment> refereeAssignments;
 
+    @OneToMany(mappedBy = "referee")
     public List<RefereeAssignment> getRefereeAssignments() {
         return refereeAssignments;
     }

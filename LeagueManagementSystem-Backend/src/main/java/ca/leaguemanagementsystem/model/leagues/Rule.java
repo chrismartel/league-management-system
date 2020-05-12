@@ -8,9 +8,10 @@ public class Rule {
 
     /* associations */
 
-    @ManyToOne
+
     private RuleBook ruleBook;
 
+    @ManyToOne
     public RuleBook getRuleBook() {
         return ruleBook;
     }
@@ -33,10 +34,11 @@ public class Rule {
     }
 
 
-    @Id
-    @GeneratedValue
+
     private Integer ruleId; // id for database
 
+    @Id
+    @GeneratedValue
     public Integer getRuleId() {
         return ruleId;
     }

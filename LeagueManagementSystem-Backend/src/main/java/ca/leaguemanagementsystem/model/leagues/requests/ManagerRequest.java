@@ -11,9 +11,9 @@ public class ManagerRequest extends Request{
 
     /* associations */
 
-    @ManyToOne
     private Admin admin;    // manager request sent to the admin
 
+    @ManyToOne
     public Admin getAdmin() {
         return admin;
     }
