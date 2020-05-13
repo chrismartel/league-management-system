@@ -7,5 +7,5 @@ import javax.persistence.Table;
 @Entity
 @DiscriminatorValue("pcks")
 @Table(name = "pickupSeason")
-public class PickupSeason extends Schedule {
+public class PickUpSeason extends Schedule {
 }
