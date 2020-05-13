@@ -1,4 +1,7 @@
 package ca.leaguemanagementsystem.dao.leagues.requests;
 
-public interface RequestRepository {
+import ca.leaguemanagementsystem.model.leagues.requests.Request;
+import org.springframework.data.repository.CrudRepository;
+
+public interface RequestRepository extends CrudRepository<Request, Integer> {
 }

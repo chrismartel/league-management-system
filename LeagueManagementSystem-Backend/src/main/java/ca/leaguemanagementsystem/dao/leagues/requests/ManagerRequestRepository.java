@@ -1,4 +1,4 @@
 package ca.leaguemanagementsystem.dao.leagues.requests;
 
-public interface ManagerRequestRepository {
+public interface ManagerRequestRepository extends RequestRepository{
 }
