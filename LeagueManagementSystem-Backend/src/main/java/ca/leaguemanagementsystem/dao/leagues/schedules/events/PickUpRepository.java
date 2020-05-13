@@ -1,4 +1,4 @@
 package ca.leaguemanagementsystem.dao.leagues.schedules.events;
 
-public interface PickUpRepository {
+public interface PickUpRepository extends EventRepository{
 }

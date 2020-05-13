@@ -1,4 +1,7 @@
 package ca.leaguemanagementsystem.dao.leagues.schedules;
 
-public interface GameTeamAssignmentRepository {
+import ca.leaguemanagementsystem.model.leagues.schedules.GameTeamAssignment;
+import org.springframework.data.repository.CrudRepository;
+
+public interface GameTeamAssignmentRepository extends CrudRepository<GameTeamAssignment,Integer> {
 }

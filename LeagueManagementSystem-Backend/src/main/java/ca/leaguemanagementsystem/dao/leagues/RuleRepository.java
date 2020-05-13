@@ -1,4 +1,7 @@
 package ca.leaguemanagementsystem.dao.leagues;
 
-public interface RuleRepository {
+import ca.leaguemanagementsystem.model.leagues.Rule;
+import org.springframework.data.repository.CrudRepository;
+
+public interface RuleRepository extends CrudRepository<Rule, Integer> {
 }

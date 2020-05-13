@@ -1,4 +1,4 @@
 package ca.leaguemanagementsystem.dao.leagues;
 
-public interface PickUpLeagueRepository {
+public interface PickUpLeagueRepository extends LeagueRepository{
 }

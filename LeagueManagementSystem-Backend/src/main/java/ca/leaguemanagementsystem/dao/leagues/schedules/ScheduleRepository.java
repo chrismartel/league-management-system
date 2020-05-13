@@ -1,4 +1,7 @@
 package ca.leaguemanagementsystem.dao.leagues.schedules;
 
-public interface ScheduleRepository {
+import ca.leaguemanagementsystem.model.leagues.schedules.Schedule;
+import org.springframework.data.repository.CrudRepository;
+
+public interface ScheduleRepository extends CrudRepository<Schedule, Integer> {
 }

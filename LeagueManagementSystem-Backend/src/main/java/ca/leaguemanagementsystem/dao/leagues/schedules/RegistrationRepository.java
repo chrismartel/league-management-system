@@ -1,4 +1,7 @@
 package ca.leaguemanagementsystem.dao.leagues.schedules;
 
-public interface RegistrationRepository {
+import ca.leaguemanagementsystem.model.leagues.schedules.Registration;
+import org.springframework.data.repository.CrudRepository;
+
+public interface RegistrationRepository extends CrudRepository<Registration, Integer> {
 }

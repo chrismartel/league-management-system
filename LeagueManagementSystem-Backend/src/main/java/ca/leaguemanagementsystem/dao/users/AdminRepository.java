@@ -1,4 +1,7 @@
 package ca.leaguemanagementsystem.dao.users;
 
-public interface AdminRepository {
+import ca.leaguemanagementsystem.model.users.Admin;
+import org.springframework.data.repository.CrudRepository;
+
+public interface AdminRepository extends CrudRepository<Admin,Integer> {
 }

@@ -1,4 +1,4 @@
 package ca.leaguemanagementsystem.dao.users;
 
-public interface PlayerRepository {
+public interface PlayerRepository extends UserRoleRepository{
 }

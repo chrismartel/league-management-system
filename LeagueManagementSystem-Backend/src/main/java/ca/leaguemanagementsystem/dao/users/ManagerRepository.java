@@ -1,4 +1,7 @@
 package ca.leaguemanagementsystem.dao.users;
 
-public interface ManagerRepository {
+import ca.leaguemanagementsystem.model.users.Manager;
+import org.springframework.data.repository.CrudRepository;
+
+public interface ManagerRepository extends UserRoleRepository {
 }

@@ -1,4 +1,4 @@
 package ca.leaguemanagementsystem.dao.notifications;
 
-public interface LeagueRequestNotificationRepository {
+public interface LeagueRequestNotificationRepository extends NotificationRepository{
 }

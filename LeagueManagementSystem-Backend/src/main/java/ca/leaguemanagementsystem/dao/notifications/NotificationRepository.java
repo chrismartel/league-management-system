@@ -1,4 +1,7 @@
 package ca.leaguemanagementsystem.dao.notifications;
 
-public interface NotificationRepository {
+import ca.leaguemanagementsystem.model.notifications.Notification;
+import org.springframework.data.repository.CrudRepository;
+
+public interface NotificationRepository extends CrudRepository<Notification, Integer> {
 }

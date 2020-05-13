@@ -1,4 +1,7 @@
 package ca.leaguemanagementsystem.dao.users;
 
-public interface UserRoleRepository {
+import ca.leaguemanagementsystem.model.users.UserRole;
+import org.springframework.data.repository.CrudRepository;
+
+public interface UserRoleRepository extends CrudRepository<UserRole,Integer> {
 }

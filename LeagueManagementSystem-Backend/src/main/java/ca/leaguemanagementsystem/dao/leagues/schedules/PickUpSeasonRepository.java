@@ -1,4 +1,4 @@
 package ca.leaguemanagementsystem.dao.leagues.schedules;
 
-public interface PickUpSeasonRepository {
+public interface PickUpSeasonRepository extends ScheduleRepository{
 }

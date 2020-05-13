@@ -1,4 +1,7 @@
 package ca.leaguemanagementsystem.dao.leagues.schedules.events;
 
-public interface EventRepository {
+import ca.leaguemanagementsystem.model.leagues.schedules.events.Event;
+import org.springframework.data.repository.CrudRepository;
+
+public interface EventRepository extends CrudRepository<Event,Integer> {
 }

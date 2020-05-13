@@ -1,4 +1,4 @@
 package ca.leaguemanagementsystem.dao.leagues.schedules;
 
-public interface PlayoffRepository {
+public interface PlayoffRepository extends ScheduleRepository{
 }
