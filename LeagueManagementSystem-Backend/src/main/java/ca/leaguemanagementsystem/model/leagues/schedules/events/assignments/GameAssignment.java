@@ -38,15 +38,15 @@ public class GameAssignment {
 
 
 
-    private Integer gameAssignmentId;
+    private long gameAssignmentId;
 
     @Id
     @GeneratedValue
-    public Integer getGameAssignmentId() {
+    public long getGameAssignmentId() {
         return gameAssignmentId;
     }
 
-    public void setGameAssignmentId(Integer gameAssignmentId) {
+    public void setGameAssignmentId(long gameAssignmentId) {
         this.gameAssignmentId = gameAssignmentId;
     }
 }

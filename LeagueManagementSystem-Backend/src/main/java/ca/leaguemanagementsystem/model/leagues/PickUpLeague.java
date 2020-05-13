@@ -12,24 +12,24 @@ public class PickUpLeague extends League{
 
     /* attributes */
 
-    private Integer minNbPlayers;   // min number of players in a pickup event
+    private int minNbPlayers;   // min number of players in a pickup event
 
-    public Integer getMinNbPlayers() {
+    public int getMinNbPlayers() {
         return minNbPlayers;
     }
 
-    public void setMinNbPlayers(Integer minNbPlayers) {
+    public void setMinNbPlayers(int minNbPlayers) {
         this.minNbPlayers = minNbPlayers;
     }
 
 
-    private Integer maxNbPlayers;   // max number of player in a pickup event
+    private int maxNbPlayers;   // max number of player in a pickup event
 
-    public Integer getMaxNbPlayers() {
+    public int getMaxNbPlayers() {
         return maxNbPlayers;
     }
 
-    public void setMaxNbPlayers(Integer maxNbPlayers) {
+    public void setMaxNbPlayers(int maxNbPlayers) {
         this.maxNbPlayers = maxNbPlayers;
     }
 }

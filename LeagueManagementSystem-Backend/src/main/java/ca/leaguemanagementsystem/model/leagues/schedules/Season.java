@@ -61,13 +61,13 @@ public class Season extends Schedule {
 
     /* attributes */
 
-    private Integer price;  // price for the season
+    private int price;  // price for the season
 
-    public Integer getPrice() {
+    public int getPrice() {
         return price;
     }
 
-    public void setPrice(Integer price) {
+    public void setPrice(int price) {
         this.price = price;
     }
 

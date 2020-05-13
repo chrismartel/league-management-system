@@ -105,25 +105,25 @@ public class Game extends Event{
 
 
 
-    private Integer scoreTeamA; // final score of Team A
+    private int scoreTeamA; // final score of Team A
 
-    public Integer getScoreTeamA(){
+    public int getScoreTeamA(){
         return scoreTeamA;
     }
 
-    public void setScoreTeamA(Integer scoreTeamA){
+    public void setScoreTeamA(int scoreTeamA){
         this.scoreTeamA = scoreTeamA;
     }
 
 
 
-    private Integer scoreTeamB; // final score of Team B
+    private int scoreTeamB; // final score of Team B
 
-    public Integer getScoreTeamB(){
+    public int getScoreTeamB(){
         return scoreTeamB;
     }
 
-    public void setScoreTeamB(Integer scoreTeamB){
+    public void setScoreTeamB(int scoreTeamB){
         this.scoreTeamB = scoreTeamB;
     }
 

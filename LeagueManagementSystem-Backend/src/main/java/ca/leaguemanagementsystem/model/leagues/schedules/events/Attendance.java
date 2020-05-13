@@ -50,15 +50,15 @@ public class Attendance {
 
 
 
-    private Integer attendanceId;   // id for database
+    private long attendanceId;   // id for database
 
     @Id
     @GeneratedValue
-    public Integer getAttendanceId() {
+    public long getAttendanceId() {
         return attendanceId;
     }
 
-    public void setAttendanceId(Integer attendanceId) {
+    public void setAttendanceId(long attendanceId) {
         this.attendanceId = attendanceId;
     }
 }

@@ -9,101 +9,101 @@ public class CompetitiveLeague extends League{
 
     /* attributes */
 
-    private Integer minNbTeams; // minimum number of teams in the league
+    private int minNbTeams; // minimum number of teams in the league
 
-    public Integer getMinNbTeams(){
+    public int getMinNbTeams(){
         return minNbTeams;
     }
 
-    public void setMinNbTeams(Integer minNbTeams) {
+    public void setMinNbTeams(int minNbTeams) {
         this.minNbTeams = minNbTeams;
     }
 
 
-    private Integer maxNbTeams; // maximum number of teams in the league
+    private int maxNbTeams; // maximum number of teams in the league
 
-    public Integer getMaxNbTeams() {
+    public int getMaxNbTeams() {
         return maxNbTeams;
     }
 
-    public void setMaxNbTeams(Integer maxNbTeams) {
+    public void setMaxNbTeams(int maxNbTeams) {
         this.maxNbTeams = maxNbTeams;
     }
 
 
-    private Integer minNbPlayersPerTeam;    // minimum number of players per team
+    private int minNbPlayersPerTeam;    // minimum number of players per team
 
-    public Integer getMinNbPlayersPerTeam() {
+    public int getMinNbPlayersPerTeam() {
         return minNbPlayersPerTeam;
     }
 
-    public void setMinNbPlayersPerTeam(Integer minNbPlayersPerTeam) {
+    public void setMinNbPlayersPerTeam(int minNbPlayersPerTeam) {
         this.minNbPlayersPerTeam = minNbPlayersPerTeam;
     }
 
 
-    private Integer maxNbPlayersPerTeam;    // maximum number of players per team
+    private int maxNbPlayersPerTeam;    // maximum number of players per team
 
-    public Integer getMaxNbPlayersPerTeam() {
+    public int getMaxNbPlayersPerTeam() {
         return maxNbPlayersPerTeam;
     }
 
-    public void setMaxNbPlayersPerTeam(Integer maxNbPlayersPerTeam) {
+    public void setMaxNbPlayersPerTeam(int maxNbPlayersPerTeam) {
         this.maxNbPlayersPerTeam = maxNbPlayersPerTeam;
     }
 
 
-    private Integer gameLength; // game lengths
+    private int gameLength; // game lengths
 
-    public Integer getGameLength() {
+    public int getGameLength() {
         return gameLength;
     }
 
-    public void setGameLength(Integer gameLength) {
+    public void setGameLength(int gameLength) {
         this.gameLength = gameLength;
     }
 
 
-    private Integer shotClockLength;    // shot clock length
+    private int shotClockLength;    // shot clock length
 
-    public Integer getShotClockLength() {
+    public int getShotClockLength() {
         return shotClockLength;
     }
 
-    public void setShotClockLength(Integer shotClockLength) {
+    public void setShotClockLength(int shotClockLength) {
         this.shotClockLength = shotClockLength;
     }
 
 
-    private Integer nbScoreKeepersPerGame;  // number of scorekeepers required per game
+    private int nbScoreKeepersPerGame;  // number of scorekeepers required per game
 
-    public Integer getNbScoreKeepersPerGame() {
+    public int getNbScoreKeepersPerGame() {
         return nbScoreKeepersPerGame;
     }
 
-    public void setNbScoreKeepersPerGame(Integer nbScoreKeepersPerGame) {
+    public void setNbScoreKeepersPerGame(int nbScoreKeepersPerGame) {
         this.nbScoreKeepersPerGame = nbScoreKeepersPerGame;
     }
 
 
-    private Integer nbRefereesPerGame;  // number of referees required per game
+    private int nbRefereesPerGame;  // number of referees required per game
 
-    public Integer getNbRefereesPerGame() {
+    public int getNbRefereesPerGame() {
         return nbRefereesPerGame;
     }
 
-    public void setNbRefereesPerGame(Integer nbRefereesPerGame) {
+    public void setNbRefereesPerGame(int nbRefereesPerGame) {
         this.nbRefereesPerGame = nbRefereesPerGame;
     }
 
 
-    private Integer nbTeamsPlayoffs;    // number of teams eligible for playoffs
+    private int nbTeamsPlayoffs;    // number of teams eligible for playoffs
 
-    public Integer getNbTeamsPlayoffs() {
+    public int getNbTeamsPlayoffs() {
         return nbTeamsPlayoffs;
     }
 
-    public void setNbTeamsPlayoffs(Integer nbTeamsPlayoffs) {
+    public void setNbTeamsPlayoffs(int nbTeamsPlayoffs) {
         this.nbTeamsPlayoffs = nbTeamsPlayoffs;
     }
 

@@ -47,15 +47,15 @@ public class PlayerTeamAssignment {
     /* attributes */
 
 
-    private Integer teamAssignmentId;
+    private long teamAssignmentId;
 
     @Id
     @GeneratedValue
-    public Integer getTeamAssignmentId() {
+    public long getTeamAssignmentId() {
         return teamAssignmentId;
     }
 
-    public void setTeamAssignmentId(Integer teamAssignmentId) {
+    public void setTeamAssignmentId(long teamAssignmentId) {
         this.teamAssignmentId = teamAssignmentId;
     }
 

@@ -37,17 +37,19 @@ public class Award {
 
     /* attributes */
 
-    private Integer awardID;
+    private long awardID;
 
     @Id
     @GeneratedValue
-    public Integer getAwardID() {
+    public long getAwardID() {
         return awardID;
     }
 
-    public void setAwardID(Integer awardID) {
+    public void setAwardID(long awardID) {
         this.awardID = awardID;
     }
+
+
 
 
     private String awardName;

@@ -43,13 +43,13 @@ public class Player extends UserRole{
 
     /* attributes */
 
-    private Integer rating; // overall rating based on career stats
+    private int rating; // overall rating based on career stats
 
-    public Integer getRating() {
+    public int getRating() {
         return rating;
     }
 
-    public void setRating(Integer rating) {
+    public void setRating(int rating) {
         this.rating = rating;
     }
 

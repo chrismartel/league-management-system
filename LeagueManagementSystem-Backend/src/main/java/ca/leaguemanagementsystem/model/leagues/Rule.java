@@ -35,15 +35,15 @@ public class Rule {
 
 
 
-    private Integer ruleId; // id for database
+    private long ruleId; // id for database
 
     @Id
     @GeneratedValue
-    public Integer getRuleId() {
+    public long getRuleId() {
         return ruleId;
     }
 
-    public void setRuleId(Integer ruleId) {
+    public void setRuleId(long ruleId) {
         this.ruleId = ruleId;
     }
 }

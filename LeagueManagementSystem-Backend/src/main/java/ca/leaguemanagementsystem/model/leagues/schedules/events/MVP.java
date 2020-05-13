@@ -38,15 +38,15 @@ public class MVP {
 
     /* attributes */
 
-    private Integer mvpId;
+    private long mvpId;
 
     @Id
     @GeneratedValue
-    public Integer getMvpId() {
+    public long getMvpId() {
         return mvpId;
     }
 
-    public void setMvpId(Integer mvpId) {
+    public void setMvpId(long mvpId) {
         this.mvpId = mvpId;
     }
 }

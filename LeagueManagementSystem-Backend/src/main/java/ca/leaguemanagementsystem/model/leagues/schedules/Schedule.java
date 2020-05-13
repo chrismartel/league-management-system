@@ -65,17 +65,19 @@ public class Schedule {
     /* attributes */
 
 
-    private Integer scheduleId;     // Id for database
+    private long scheduleId;     // Id for database
 
     @Id
     @GeneratedValue
-    public Integer getScheduleId() {
+    public long getScheduleId() {
         return scheduleId;
     }
 
-    public void setScheduleId(Integer scheduleId) {
+    public void setScheduleId(long scheduleId) {
         this.scheduleId = scheduleId;
     }
+
+
 
 
     private String scheduleName;            // name of schedule
