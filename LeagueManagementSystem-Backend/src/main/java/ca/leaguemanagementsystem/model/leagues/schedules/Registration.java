@@ -40,15 +40,15 @@ public class Registration {
     /* attributes */
 
 
-    private long registrationId;
+    private Long registrationId;
 
     @Id
     @GeneratedValue
-    public long getRegistrationId() {
+    public Long getRegistrationId() {
         return registrationId;
     }
 
-    public void setRegistrationId(long registrationId) {
+    public void setRegistrationId(Long registrationId) {
         this.registrationId = registrationId;
     }
 

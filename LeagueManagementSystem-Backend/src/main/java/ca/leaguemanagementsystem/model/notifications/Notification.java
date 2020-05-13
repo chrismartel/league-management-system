@@ -64,15 +64,15 @@ public class Notification {
 
 
 
-    private long notificationId;
+    private Long notificationId;
 
     @Id
     @GeneratedValue
-    public long getNotificationId() {
+    public Long getNotificationId() {
         return notificationId;
     }
 
-    public void setNotificationId(long notificationId) {
+    public void setNotificationId(Long notificationId) {
         this.notificationId = notificationId;
     }
 }

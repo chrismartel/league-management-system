@@ -41,15 +41,15 @@ public class RuleBook {
     /* attributes */
 
 
-    private long ruleBookId;
+    private Long ruleBookId;
 
     @Id
     @GeneratedValue
-    public long getRuleBookId() {
+    public Long getRuleBookId() {
         return ruleBookId;
     }
 
-    public void setRuleBookId(long ruleBookId) {
+    public void setRuleBookId(Long ruleBookId) {
         this.ruleBookId = ruleBookId;
     }
 }

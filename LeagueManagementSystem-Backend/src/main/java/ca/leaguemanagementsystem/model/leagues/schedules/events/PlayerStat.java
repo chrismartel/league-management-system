@@ -193,15 +193,15 @@ public class PlayerStat {
 
 
 
-    private long playerStatId;
+    private Long playerStatId;
 
     @Id
     @GeneratedValue
-    public long getPlayerStatId() {
+    public Long getPlayerStatId() {
         return playerStatId;
     }
 
-    public void setPlayerStatId(long playerStatId) {
+    public void setPlayerStatId(Long playerStatId) {
         this.playerStatId = playerStatId;
     }
 }

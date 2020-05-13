@@ -39,15 +39,15 @@ public class Location {
     /* attributes */
 
 
-    private long locationId;            //Id for database
+    private Long locationId;            //Id for database
 
     @Id
     @GeneratedValue
-    public long getLocationId() {
+    public Long getLocationId() {
         return locationId;
     }
 
-    public void setLocationId(long locationId) {
+    public void setLocationId(Long locationId) {
         this.locationId = locationId;
     }
 

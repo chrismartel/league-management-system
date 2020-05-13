@@ -81,15 +81,15 @@ public class Admin {
 
 
 
-    private long adminId;
+    private Long adminId;
 
     @Id
     @GeneratedValue
-    public long getAdminId() {
+    public Long getAdminId() {
         return adminId;
     }
 
-    public void setAdminId(long adminId) {
+    public void setAdminId(Long adminId) {
         this.adminId = adminId;
     }
 }

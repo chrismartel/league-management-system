@@ -55,15 +55,15 @@ public class Membership {
 
     /* attributes */
 
-    private long membershipId;  // Id for database
+    private Long membershipId;  // Id for database
 
     @Id
     @GeneratedValue
-    public long getMembershipId() {
+    public Long getMembershipId() {
         return membershipId;
     }
 
-    public void setMembershipId(long membershipId) {
+    public void setMembershipId(Long membershipId) {
         this.membershipId = membershipId;
     }
 

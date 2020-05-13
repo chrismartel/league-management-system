@@ -10,7 +10,7 @@ public class UserRole {
 
     /* associations */
 
-    private AppUser appUser;  // user to which the role belongs
+    private AppUser appUser;  // user to which the role beLongs
 
     @ManyToOne
     public AppUser getAppUser() {
@@ -24,15 +24,15 @@ public class UserRole {
 
     /* attributes */
 
-    private long userRoleId;    // Id for database
+    private Long userRoleId;    // Id for database
 
     @Id
     @GeneratedValue
-    public long getUserRoleId() {
+    public Long getUserRoleId() {
         return userRoleId;
     }
 
-    public void setUserRoleId(long userRoleId) {
+    public void setUserRoleId(Long userRoleId) {
         this.userRoleId = userRoleId;
     }
 

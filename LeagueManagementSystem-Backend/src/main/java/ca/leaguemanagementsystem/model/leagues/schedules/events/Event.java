@@ -61,15 +61,15 @@ public class Event {
     /* attributes */
 
 
-    private long eventId;               // Id for database
+    private Long eventId;               // Id for database
 
     @Id
     @GeneratedValue
-    public long getEventId() {
+    public Long getEventId() {
         return eventId;
     }
 
-    public void setEventId(long eventId) {
+    public void setEventId(Long eventId) {
         this.eventId = eventId;
     }
 
